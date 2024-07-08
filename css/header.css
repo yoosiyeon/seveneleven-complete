@@ -1,0 +1,95 @@
+
+        /* header */
+        header{position: relative; margin: 0 auto; height: 124px;}
+
+        /* top_menu */
+        .top_menu{width: 1240px;margin: auto;position: relative;}
+
+        .top_menu ul{position: absolute;right: 0px; top: -124px; display: flex ;}
+
+        .top_menu li{padding: 8px 14px; font-size: 13px; color: #727272;}
+
+        .top_menu li::after{content: ""; display: block; position: absolute; background-color: #909090; width: 1px;height: 10px;right: 80px; top: 13px;}
+
+        /* header_bottom */
+
+        .header_bottom{display: flex; justify-content: center; margin: 0 auto;}
+
+        /* logo */
+
+        .logo_wrap{margin-top: 65px;}
+
+        .logo{width: 285px; height: 59px;padding: 10px 0px; text-align: center;box-sizing: border-box;}
+
+        /* gnb */
+
+        .gnb{width: 850px ;margin-top: 65px;}
+
+        /* gnb_top */
+
+        .gnb > ul{display: flex;height:40px;margin:auto;}
+
+        .gnb > ul > li{width: 170px; font-size: 20px; text-align: center; padding: 16px 0px; height: 59px; box-sizing: border-box;}
+
+        /* gnb_animation */
+
+        .menu01::after{content: ""; display: block; width: 0px; height: 3px; position: absolute; bottom: 0; background: #FF6C00;}
+
+        .menu02::after{content: ""; display: block; width: 0px; height: 3px; position: absolute; bottom: 0; background:#E50112;}
+
+        .menu03::after{content: ""; display: block; width: 0px; height: 3px; position: absolute; bottom: 0; background: #147350;}
+
+        .menu04::after{content: ""; display: block; width: 0px; height: 3px; position: absolute; bottom: 0; background: #FF6C00}
+
+        .menu05::after{content: ""; display: block; width: 0px; height: 3px; position: absolute; bottom: 0; background:#E50112;}
+
+        .gnb > ul > li:hover:after{width: 20px;animation: width50 0.5s forwards;}
+
+        @keyframes width50{to{width: 170px;}}
+
+        .menu01 li:hover{color: #FF6C00;}
+
+        .menu02 li:hover{color:#E50112;}
+
+        .menu03 li:hover{color: #147350;}
+
+        .menu04 li:hover{color:  #FF6C00}
+
+        .menu05 li:hover{color: #E50112;}
+
+        /* gnb_bottom */
+        
+        .gnb > ul > li > ul{position: absolute;width: 170px; top:124px; z-index: 51;display:none; padding-top: 5px;}
+
+        .gnb > ul > li > ul > li{font-size: 16px;background-color: #ffffff; padding: 8px 23px; box-sizing: border-box; text-align: center;}
+
+        .nav_bg{position: absolute;width:100%;height:350px;background:#ffffff; display:none ; z-index: 50; box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.12);}
+
+        .menu04 img{width: 15px;height: 15px; padding-left: 5px;}
+
+        /* map_search */
+
+        .map_search{width: 105px; height: 59px; margin-top: 65px; display: flex; justify-content: center;}
+
+        .map_search img{padding-top: 15px;}
+
+
+        /* 팝업 나중에 다시 하기ㅜ*/
+        .container{position: absolute;  width: 100%; padding: 20px 0; z-index: 100;}
+
+        .popbtn{width: 150px;height: 40px; margin: 20px auto; background: #147350; text-align: center; border-radius: 7px;}
+
+        .popbtn a{display: block; color: #333; line-height: 40px; font-weight: bold;}
+
+        .layer_pop_txt{display: none; position: fixed; width: 100%; height: 100%; top:0; left: 0; background: rgba(0, 0, 0, 0.7);}
+
+        .layer_pop_txt .pop_content{position: absolute; width: 70%; top: 20%; left: 15%; z-index: 20; background: #ffffff; text-align: center; padding: 30px 0;}
+
+        .layer_pop_txt .close_btn{position: absolute; top: 10px; right: 15px; font-size: 20px;}
+
+        .index_TopBtn{width: 50px;height: 50px;border-radius: 200%; border: 1px solid #aaa; position: fixed; right: -100px; bottom: 10px; transform: translateY(-50%); transition: right 0.2s; padding: 7px 5px 20px 9px;  box-sizing: border-box;}
+
+        .index_TopBtn img{width: 30px; }
+
+
+

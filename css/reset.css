@@ -1,0 +1,55 @@
+body, h1, h2, h3, p, div, ul, li, dl, dt, dd, form, fieldset, legend, label {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "나눔고딕", "맑은 고딕",sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+ul, li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+fieldset, img{
+    border: 0 none;
+}
+
+input, button{
+    vertical-align: middle;
+}
+
+button{
+    cursor: pointer;
+}
+
+address{
+    font-style: normal;
+}
+
+/* common */
+
+.hide{
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+        /* reset */
+        body, h1, h2, h3, p, a, div, ul, li, dl, dt, dd, form, fieldset, legend, label {margin: 0;padding: 0}
+        body {font-family:"noto sans", sans-serif;line-height: 1.5}
+        ul, li {list-style: none}
+        a {text-decoration: none;color: inherit}
+        fieldset, img {border: 0 none}
+        input, button {vertical-align: middle}
+        button {cursor: pointer}
+        address {font-style: normal}
+        /* common */
+        .hide {width: 0;height: 0; overflow: hidden;}

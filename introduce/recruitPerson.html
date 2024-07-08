@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="Author" content="http://www.7-eleven.co.kr/"/>
+	<meta name="keywords" content="7-ELEVEN, 세븐일레븐"/>
+	<title> 채용안내 | 세븐일레븐 소개 | 7-ELEVEN | 세븐일레븐</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        /* main */
+
+        /* 서브 메뉴 타이틀 */
+
+        .title_inner{text-align: center; margin-top: 131px; color: #333333; }
+
+        .title_page{font-size:45px; font-weight: bold;}
+
+        .sub_copy{font-size: 16px;height: 55px;}
+
+        .index_TopBtn{width: 50px;height: 50px;border-radius: 200%; border: 1px solid #aaa; position: fixed; right: -100px; bottom: 10px; transform: translateY(-50%); transition: right 0.2s; padding: 7px 5px 20px 9px;  box-sizing: border-box;background: #fff;}
+
+        .index_TopBtn img{width: 30px; }
+
+        /* 탑메뉴 메뉴 */
+
+        .tab_button{margin: 0 auto; width: 1240px; position: relative;}
+
+        .tab_button_bg{position: absolute; width:100%; height:0px; z-index: 40; border-bottom: 1px solid #AAA;}
+
+        .tab_button ul{display: flex; font-size: 18px; color: #555; justify-content: center;}
+
+        .tab_button ul li{width: 177px;height: 65px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;position: relative;}
+
+            /* 탑메뉴 장식 */
+
+        .tab_button ul li:first-child::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+        .tab_button ul li:nth-child(2)::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+        .tab_button ul li:nth-child(3):after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+            /* 탑메뉴 (고정) */
+
+        .tab_button_fixed{position: fixed;z-index: 40;left: 50%;top: 0;transform: translateX(-50%);}
+
+        .tab_button_bg_fixed{position: fixed;height: 65px; background: #fff; z-index: 39;top: 0;}
+
+            /* 비활성화 탑메뉴 */
+
+        .tab_cont > div  {width: 100%; display: none;}
+        
+            /* 활성화된 탑메뉴 */
+
+        li.open{color: #147350;font-weight: bold;}
+
+        .tab_cont > div.open {display: block;}
+
+        /* 메인 컨텐츠 중앙 정렬 1240px */
+
+        .submenu, .recruit_search , .talent, .benefits, .jobIntroduction{margin: 0 auto; width: 1240px; }
+
+        /* 텍스트 컨텐츠 -> 불필요시 삭제 */
+
+        .sub_icon{display: flex; align-items: center;}
+
+        .submenu_top{display: flex; align-items: center;margin-top: 80px}
+
+        .submenu_title{padding-left: 26px; font-size: 30px;}
+
+            /*텍스트 컨텐츠_내용*/
+
+        .submenu_text{margin: 5px 0 0 36px; font-size: 17px; color: #555;}
+
+        .submenu_text span{color: #147350; font-weight: bold;}/* 텍스트 컨텐츠_글씨 강조 */
+
+        /* 검색박스 */
+
+        .search_box label{display: none;} /*이거 오버플로우 적용이 안되서 일단 안보이게 해놨어요 ^_ㅜ*/
+
+        .search_box{display: flex; justify-content: center; margin-top: 60px;}
+
+        #searchType, #searchText, .search_btn{border: none;}
+
+        .search_form fieldset{display: flex;}
+
+        .search_form{box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.12); width: 700px;height: 55px; display: flex; align-items: center;justify-content: center; border-radius: 35px; border: 1px solid #fff;}
+
+            /* 검색박스_select,text box*/
+
+        #searchType{padding: 0 10px; font-size: 15px}
+
+        #searchText{width: 510px; font-size: 17px;}
+
+        .search_line{display: flex;align-items: center; padding: 0 10px;}
+
+            /* 검색박스_버튼 */
+
+        .search_btn{border-radius: 35px; width: 120px; background-color: #147350; color: #fff; display: flex; justify-content: center; align-items: center; font-size: 19px; margin-left: 20px}
+        
+        .search_btn:hover {transform: scale(98%);}
+    
+            /* 검색박스_포커스 */
+
+        #searchText:focus{outline: none;}
+
+        .search_form:focus-within {border: 1px solid #147350;}
+
+        /* 탑메뉴 01 */
+
+        /* 인재상 */
+
+        .talent_tt_img{display: flex; justify-content: center; margin-top: 20px}
+        .talent_tt_img img{width: 250px;}
+        .talent_text01{text-align: center; font-size: 28px; color: #147350; margin: 0px 0px 100px;}
+        .talent_cont li{position: relative;}
+        .talent_img{border-radius: 200px 200px; overflow: hidden;width: 850px; height: 350px;margin: 0px 0px 150px 50px;}
+        .talent_img img{width: 850px;}
+        .talent_text{position: absolute; top: 0; right: 80px; text-align: center; width: 420px; height: 350px;color: #333; padding: 100px; box-sizing: border-box; z-index: 5; background: #fff;}
+
+        .talent_text p:nth-child(1){font-size: 40px; box-sizing: border-box; padding-bottom: 10px;position: relative;}
+        .talent_text p:nth-child(2){font-size: 24px; margin-top: 20px;}
+        .talent_text p:nth-child(1)::after{content: ""; display: block; height: 2px; width: 400px; position: absolute; bottom: 0px; background: #FF6C00;}
+        
+        /* 가운데꺼 */
+        .talent_cont li:nth-child(2){margin-left: 0px; display: flex;}
+        .talent_img2{border-radius: 0px 200px 200px 0px; overflow: hidden;width: 850px; height: 350px;margin: 0px 50px 150px auto;}
+        .talent_img2 img{width: 850px;}
+        .talent_text2{position: absolute; top: 0; left: 80px; ; text-align: center; width: 420px; height: 350px;color: #333; padding: 100px; box-sizing: border-box; z-index: 5; background: #fff;}
+
+        .talent_text2 p:nth-child(1){font-size: 40px; box-sizing: border-box; padding-bottom: 10px;position: relative;}
+        .talent_text2 p:nth-child(2){font-size: 24px; margin-top: 20px;}
+        .talent_text2 p:nth-child(1)::before{content: ""; display: block; height: 2px; width: 400px; position: absolute; bottom: 0px; right: 0px; background: #147350;}
+
+        /* 마지막꺼 효과 */
+        .talent03 p:nth-child(1)::after{content: ""; display: block; height: 2px; width: 400px; position: absolute; bottom: 0px; background: #E50112;}
+
+
+        /* 복리후생 */
+        
+        .benefits ul{margin: 50px 0px 150px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px 10px;}
+
+        .benefits li:last-child{width: 100%;}
+
+        .benefits li{border-radius: 35px; background: #E8F1EE; width: calc(1220px/2); height: 150px; display: flex; padding: 30px; box-sizing: border-box; align-items: center;justify-content: space-between;}
+
+        .benefits li div:first-child{background: #fff; border-radius: 200px;padding: 5px;}
+
+        .benefits li div:nth-child(2){left: 10px;}
+
+        .benefits div p{text-align: right; width: 350px;}
+
+        .benefits div p:first-child{font-size: 24px; padding-bottom: 10px;}
+
+        /* 스크롤 애니메이션 효과 */
+        
+        .talent_ani{transform: translateX(10%); opacity: 0; transition: 0.8s;}
+
+        .talent_ani.active{transform: translateY(0); opacity: 1;}
+        
+        /* 탑메뉴 02 */
+
+        /* 채용철차 */
+        .emprocess01{text-align: center; margin: 60px auto 100px; width: 1080px;}
+
+        .emprocess02{text-align: center; margin: 60px auto 150px; width: 1080px;}
+
+        .emprocess_title{font-size: 40px;}
+
+        .emprocess_title span{color: #147350;}
+
+        .emprocess{display: flex; justify-content: space-around;}
+
+        .emprocess li{text-align: center;}
+
+        .step_wrap{border: 2px solid rgb(20, 115, 80,20); border-radius: 250px; width: 160px; height: 160px; margin: 0px auto 30px;}
+
+        .emprocess>li:last-child div{background-color: #147350; border-radius: 250px; width: 160px; height: 160px; margin: 0px auto 30px;}
+
+        .step{font-size: 13px; color: #555;padding-top: 40px;}
+
+        .emprocess>li:last-child .step{color: #fff;}
+
+        .stepTitle{font-size: 25px; color: #147350;padding: 10px; font-weight: bold;}
+
+        .emprocess>li:last-child .stepTitle{color:#fff;}
+
+        .emprocess ul>li{font-size: 17px; color: #555; text-align: center; line-height: 1.8;}
+
+        /* 탑메뉴 03 */
+
+        /* 채용문의 아코디언 */
+        .accordion_Table{text-align: center; margin: 60px auto 150px; width: 1080px;}
+
+        .accordion_Table p{text-align: left; width: 820px;color: #333; font-size: 17px;padding: 0px 20px 0px 40px;}
+
+        .accordion_Table img:nth-child(1){width: 40px; height: 40px;}
+
+        /* 아코디언 질문 */
+
+        .question{border-top: 1px solid #333; padding: 25px 50px;display: flex; align-items: center;}
+
+        .table_List>li:last-child{border-bottom: 1px solid #333;}
+
+        .icon_clickQ{transform: rotate(180deg)}
+
+        /* 아코디언 대답 */
+
+        .answer{display: none;}
+
+        .answer_cont{background-color: #eee; border-bottom:1px solid #eee; padding: 30px 50px; display: flex; align-items: center;}
+        
+        .question .icon {transform:scaleY(-1); transition: 0.3s ease; /* 부드러운 전환을 위한 transition */
+}
+
+        /* 아코디언 질문_hover효과 */
+
+        .question:hover p{font-weight: bold;}
+
+        .accordion_TableBtn{width: 300px; height: 65px; border-radius: 35px; border: 1px solid #555; background-color: #fff; font-size: 20px; color: #333333;margin-top: 80px;}
+
+        .accordion_TableBtn:hover{background-color: #147350;color: #fff; border: none;}
+
+
+        /* 채용게시판 */
+        .recruit_Table{text-align: center; margin: 60px auto 0px; width: 1080px;}
+
+        .recruit_Table>.table_List li{height: 55px; display: flex;}
+
+            /* 게시판 너비 _ 갯수랑 너비 필요한 만큼 조정해서 쓰세요 */
+
+        .recruit_Table>.table_List li span:nth-child(1){width: 7%;}
+
+        .recruit_Table>.table_List li span:nth-child(2){width: 10%;}
+
+        .recruit_Table>.table_List li span:nth-child(3){width: 58%;}
+
+        .recruit_Table>.table_List li span:nth-child(4){width: 15%;}
+
+        .recruit_Table>.table_List li span:nth-child(5){width: 10%;}
+
+            /* 게시판 상단 */
+
+        .recruit_Table>.table_List>a>.line_List01{background-color: #eee; color: #147350; align-items: center; border-top: 2px solid #147350; font-size: 17px; font-weight: bold;}
+
+            /* 게시판 내용 */
+
+        .recruit_Table>.table_List>a>.line_List02{color: #333; align-items: center;font-size: 17px; border-bottom:1px solid #eee;}
+
+            /* 게시판 내용_hover효과 */
+
+        .recruit_Table>.table_List>a>.line_List02:hover{color: #FF6C00;}
+
+
+        /* 페이저 */
+
+        .pageNationWrap{margin: 105px 0 150px; display: flex; justify-content: center;}
+
+        .pageNationWrap img{padding: 9px 30px;}
+
+        .pageNation{display: flex;}
+
+            /* 비활성 페이저 효과*/
+
+        .pageNation li{align-items: center; padding: 0 10px; font-size: 20px; color: #ddd;}
+
+            /* 활성화 페이저 효과*/
+
+        .pageNation li:nth-child(1) span{color: #147350; font-weight: bold;}
+
+
+
+        </style>
+        <script>
+            $(document).ready(function(){
+                /* gnb_slideDown */
+                    $(".gnb>ul>li , .nav_bg").hover(function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                    },function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                    });
+
+                /* side_menu_fixed*/
+                $(window).scroll(function(){
+                    let sT = $(window).scrollTop();
+                    
+                    if(sT > 400){
+                        $(".tab_button").addClass("tab_button_fixed");
+                        $(".tab_button_bg").addClass("tab_button_bg_fixed");
+                    } else{
+                        $(".tab_button").removeClass("tab_button_fixed");
+                        $(".tab_button_bg").removeClass("tab_button_bg_fixed");
+                    }
+                    });
+
+                /* 탑메뉴 */
+                    $(".tab_button li").click(function () {
+                        var idx = $(this).index();
+                    $(this).addClass("open").siblings().removeClass("open");
+
+                    $(".tab_cont>div")
+                        .eq(idx).addClass("open").siblings(".tab_cont>div").removeClass("open");
+                    });
+
+                /* 탑버튼 */
+            $(window).scroll(function(){
+            let sT = $(window).scrollTop();
+                    
+            if(sT > 500){
+                $(".index_TopBtn").css({right: 220});
+                    } else{
+                $(".index_TopBtn").css({right: -100})
+                    }
+                });
+
+                /* 아코디언 */
+                    $(".question").click(function(){
+                        $(this).next().slideToggle().siblings(".answer").slideUp();
+
+                    });
+
+                });
+
+        </script>
+</head>
+<body>
+
+    <!-- header -->
+    <header id="header" class="header">
+    <div class="header_bottom">
+        <!-- logo -->
+        <div class="logo_wrap">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/SevenElevenLogo.svg" alt="seveneleven" width="181px" height="33px">
+                </a>
+            </h1>
+        </div>
+    
+        <!-- gnb -->
+        <nav class="gnb">
+        <h2 class="hide">주요 메뉴</h2> 
+        <ul>
+            <li class="menu01">
+                <a href="../introduce/intro.html">세븐일레븐 소개</a>
+                <ul>
+                    <li><a href="../introduce/intro.html">회사소개</a></li>
+                    <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                    <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                    <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                    <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                    <li><a href="../introduce/news.html">NEWS</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu02">
+                <a href="../event/eventList.html">이벤트</a>
+                <ul>
+                    <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                    <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu03">
+                <a href="../product/FreshfoodList.html">상품 / 서비스</a>
+                <ul>
+                    <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                    <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                    <li><a href="../product/presentList.html">이달의 증정할인</a></li>
+                    <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                    <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                    <li><a href="../product/service.html">서비스 안내</a></li>
+                    <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                    <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu04">
+                <a href="../partner/partnerGuide.html">입점상담</a>
+                <ul>
+                    <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                    <li><a href="https://www.7-eleven.co.kr/mp/main.asp">동반성장<img src="../images/arrow-up-right.png"alt="동반성장 링크가기"></a></li>
+                </ul>
+            </li>
+        
+            <li class="menu05">
+                <a href="../franchise/franchiseGuide.html">창업안내</a>
+                <ul>
+                    <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                    <li><a href="../franchise/franchiseExplan.html">창업절차</a></li>
+                    <li><a href="../franchise/franchiseAdvice.html">창업설명회</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        </nav>
+        <!-- map_search -->
+        <div class="map_search">
+            <a href="../map_search.html">
+            <img src="../images/pin.png" alt="매장찾기">
+            </a>
+        </div>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!-- top menu -->
+    <div class="top_menu">
+    <h2 class="hide">유틸메뉴</h2>
+        <ul>
+            <li><a href="../login.html">로그인</a></li>
+            <li><a href="../join.html">회원가입</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <!-- main -->
+    <main>
+    <div id="container"> 
+        <!-- 서브 메뉴 타이틀 -->
+        <div class="title_inner">
+            <h3 class="title_page">채용안내</h3>
+            <p class="sub_copy">세븐 일레븐은 세계 속에 우뚝 선 아름다운 롯데의 꿈에 동참할 젊은이의 도전을 기다립니다.</p>
+        </div>
+
+        <!-- 탑메뉴 버튼-->
+            <div class="tab_button">
+                <ul>
+                    <li class="open"><a href="#none">채용안내</a></li>
+                    <li><a href="#none">채용절차</a></li>
+                    <li><a href="#none">채용문의</a></li>
+                    <li><a href="#none">채용공고</a></li>
+                </ul>
+            </div>
+            <div class="tab_button_bg"></div>
+            <div class="index_TopBtn">
+                <a href="#"><img src="../images/topBtn.png" alt="위로가기"></a>
+            </div>
+    
+        <!-- 탑메뉴 내용 -->
+            <div class="tab_cont">
+                <!-- 탑메뉴01 -->
+                <div class="tapmenu01 open">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">인재상</p>
+                        </div>
+                        <p class="submenu_text"></p>
+                    </section>
+
+                    <section class="talent">
+                        <div class="talent_tt_img"><img src="../images/recruitPerson_01.png" alt=""></div>
+                        <p class="talent_text01 talent_ani">세계 1등 편의점 세븐일레븐!<br>
+                            코리아세븐에서 해피리더로서의 역량을 겸비한 인재를 채용합니다.</p>
+                            <div class="talent_cont">
+                                <ul>
+                                    <li><div class="talent_img talent_ani"><img src="../images/talent_img_01.jpg" alt=""></div>
+                                        <div class="talent_text"><p class="talent_ani">고객지향</p><p class="talent_ani">일상의 행복을 충전시키는 인재</p></div></li>
+                                    <li><div class="talent_img2 talent_ani"><img src="../images/talent_img_02.jpg" alt=""></div>
+                                        <div class="talent_text2"><p class="talent_ani">창의와 혁신
+                                        </p><p class="talent_ani">새로운 길을 가는 도전적인 인재</p></div></li>
+                                    <li><div class="talent_img talent_ani"><img src="../images/talent_img_03.jpg" alt=""></div>
+                                        <div class="talent_text talent03"><p class="talent_ani">정직성</p><p class="talent_ani">정정당당하게 실행하는 인재</p></div></li>
+                                </ul>
+                            </div>
+                    </section>
+
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">복리후생</p>
+                        </div>
+                        <p class="submenu_text">세븐일레븐은 임직원의 가족 지원, 건강, 여가 생활 등에 대해 다양한 복리후생 제도를 지원하고 있습니다.</p>
+                    </section>
+
+                    <section class="benefits">
+                        <div class="benefits_cont">
+                            <ul>
+                                <li class="talent_ani"><div><img src="../images/benefits_01.png" alt="학자금"></div>
+                                <div><p class="benefits_title">학자금 지원</p>
+                                <p class="benefits_text">전 임직원의 유치원,초,중,고,대학생 자녀의 학자금을 자녀 수에 제한 없이 100% 지원합니다.</p>
+                                </div></li>
+                                <li class="talent_ani"><div><img src="../images/benefits_02.png" alt="학자금"></div>
+                                <div><p class="benefits_title">학자금 지원</p>
+                                <p class="benefits_text">기쁨과 슬픔을 나누는 마음으로 결혼, 자녀출산, 부모님 회갑, 칠순, 입원치료, 가족 사망 등 경조사 일에 경조금, 휴가, 화환,상조용품을 드립니다.</p></div></li>
+                                <li class="talent_ani"><div><img src="../images/benefits_03.png" alt="학자금"></div>
+                                <div><p class="benefits_title">학자금 지원</p><p class="benefits_text">전 임직원의 유치원,초,중,고,대학생 자녀의 학자금을 자녀 수에 제한 없이 100% 지원합니다.</p></div></li>
+                                <li class="talent_ani"><div><img src="../images/benefits_04.png" alt="학자금"></div>
+                                <div><p class="benefits_title">학자금 지원</p><p class="benefits_text">전 임직원의 유치원,초,중,고,대학생 자녀의 학자금을 자녀 수에 제한 없이 100% 지원합니다.</p></div></li>
+                                <li class="talent_ani"><div><img src="../images/benefits_01.png" alt="학자금"></div>
+                                <div><p class="benefits_title">학자금 지원</p><p class="benefits_text">전 임직원의 유치원,초,중,고,대학생 자녀의 학자금을 자녀 수에 제한 없이 100% 지원합니다.</p></div></li>
+                            </ul>
+                        </div>
+                    </section>
+                    <script>
+            
+                        //스크롤애니메이션//
+                        const options = {
+                            root: null, // viewport
+                            rootMargin: "0px",
+                            threshold: 0.1,  // 10%가 viewport에 들어와 있어야 callback 실행
+                        }
+                    
+                        const observer = new IntersectionObserver(entries => {
+                            entries.forEach(entry => {
+                            console.log(entry.isIntersecting);
+                            if (entry.isIntersecting) {
+                            entry.target.classList.add("active");
+                            } else {
+                            entry.target.classList.remove("active");
+                                }
+                            });
+                        }, options);
+                    
+                        const titleList = document.querySelectorAll('.talent_ani');
+                    
+                        // 반복문을 돌려 모든 DOM에 적용
+                        titleList.forEach(el => observer.observe(el));
+                    
+                        </script>
+                </div>
+
+                <!-- 탑메뉴02 -->
+                <div class="tapmenu02">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">채용절차</p>
+                        </div>
+                        <p class="submenu_text"><span>세계 1등 편의점 세븐일레븐!</span>코리아세븐에서 해피리더로서의 역량을 겸비한 인재를 채용합니다.</p>
+                    </section>
+
+                    <!--채용절차-->
+                    <section class="emprocess01">
+                        <h5 class="emprocess_title"><span>신입채용</span> 자사채용 (JA Grade - 수시채용)</h5>
+                        <ul class="emprocess">
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 01</p>
+                                <p class="stepTitle">모집공고</p>
+                                </div>
+                                <ul>
+                                    <li>자사홈페이지</li>
+                                    <li>채용사이트</li>
+                                    <li>워크넷(고용노동부)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 02</p>
+                                <p class="stepTitle">1차면접</p></div>
+                                <ul>
+                                    <li>자기소개서위주의 역량면접 (실무진)</li>
+                                    <li>직무능력검사</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 03</p>
+                                <p class="stepTitle">인턴실습</p></div>
+                                <ul>
+                                    <li>점포입문교육(오산 인재개발원)</li>
+                                    <li>점포 근무 4개월</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 04</p>
+                                <p class="stepTitle">최종면접</p></div>
+                                <ul>
+                                    <li>PT면접</li>
+                                    <li>임원면접</li>
+                                    <li>경력사원 (SA이상- 수시채용)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="emprocess02">
+                        <h5 class="emprocess_title"><span>경력사원</span> 자사채용 (JA Grade - 수시채용)</h5>
+                        <ul class="emprocess">
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 01</p>
+                                <p class="stepTitle">모집공고</p>
+                                </div>
+                                <ul>
+                                    <li>자사홈페이지</li>
+                                    <li>채용사이트</li>
+                                    <li>워크넷(고용노동부)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 02</p>
+                                <p class="stepTitle">임원면접</p></div>
+                                <ul>
+                                    <li>경력위주 질의응답</li>
+                                    <li>위주 면접</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 03</p>
+                                <p class="stepTitle">급여협상</p></div>
+                                <ul>
+                                    <li>적정 직급 및 연봉 산정</li>
+                                    <li>최종협의</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="step_wrap">
+                                <p class="step">STEP 04</p>
+                                <p class="stepTitle">채용승인</p></div>
+                                <ul>
+                                    <li>대표이사 및 그룹 승인</li>
+                                    <li>임원면접</li>
+                                    <li>경력사원 (SA이상- 수시채용)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                </div>
+                
+
+                <!-- 탑메뉴03 -->
+                <div class="tapmenu03">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">채용문의</p>
+                        </div>
+                        <p class="submenu_text">대학생 여러분의 젊음과 열정에 세븐일레븐이 함께 하겠습니다.</p>
+                    </section>
+                    
+                    <!-- 검색 -->
+                    <section class="recruit_search">
+                        <div class="search_box">
+                            <form action="" class="search_form" name="" method="">
+                                <fieldset>
+                                    <legend class="hide">키워드 검색</legend>
+                                    <label for="search" class="hide">입력</label>
+                                    <input type="text" id="searchText" name="searchText" value="" placeholder="검색어를 입력해주세요." title=""/>
+                                </fieldset>
+                            </form>
+                            <button class="search_btn">검색</button>
+                        </div>
+                    </section>
+
+                    <!--채용문의-->
+                    <section class="accordion_Table">
+                        <ul class="table_List">
+                            <li class="qna1">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>채용 형태는 어떻게 구분되어 있습니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                    <p>상하반기(3월, 9월)에 실시하는 롯데그룹 신입채용 전형이 있으며,
+                                        전문인력, 경력사원, 인턴사원채용은 수시채용을 실시하고 있습니다.</p></div>
+                            </li>
+                            <li class="qna2">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>채용 후 수습기간은 얼마나 됩니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                        <p>경력사원의 정규직 전환 채용의 경우 수습기간 적용이 없습니다.</p></div></div>
+                            </li>
+                            <li class="qna3">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>세븐일레븐 점포아르바이트 경험은 입사지원시 가산점이 있습니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                    <p>점포아르바이트 경력은 근무기간과 기타 평가요소에 따라 가산점이 부여될 수 있습니다. (자사채용 시 별도 공지) 그룹에서 주관하는 채용의 경우에는 정량적 가산점은 없습니다.</p></div></div>
+                            </li>
+                            <li class="qna4">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>자격증에 대한 가산점이 있습니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                    <p>일반적으로 직무와 관련이 있는 자격증은 우대합니다. 예) 점포개발 Recruiter: 공인중개사</p></div></div>
+                            </li>
+                            <li class="qna5">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>지원응시 횟수에 제한이 있습니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                    <p>응시제한은 없습니다. 기존에 탈락하셨던 응시자도 제한을 두지 않습니다.</p></div></div>
+                            </li>
+                            <li class="qna6">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>채용 형태는 어떻게 구분되어 있습니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                    <p>롯데그룹 공채 신입사원 입사지원 대상은 고졸이상 및 졸업 예정자이고, 그 시기는 상반기와 하반기에 걸쳐 년 2회 실시하고 있습니다. 상반기는 5월 ~ 6월, 하반기는 9월 ~ 10월 중에 진행합니다.</p></div></div>
+                            </li>
+                            <li class="qna7">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>[인턴십] 롯데그룹 대학생 인턴사원 공개채용 모집 대상은 어떻게 됩니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                    <p>· 기졸업자, 졸업예정자 및 4학년 1학기 재학생의 경우 입사 지원 가능합니다.
+                                        (단, 남자의 경우 군필자(면제 제외)만 입사 지원 가능합니다.)</p></div></div>
+                            </li>
+                            <li class="qna8">
+                                <div class="question"><img src="../images/question.png"  alt="질문아이콘"><p>[인턴십] 롯데그룹 대학생 인턴사원 공개채용 진행 일정은 어떻게 됩니까?</p></div>
+                                <div class="answer">
+                                    <div class="answer_cont"><img src="../images/answer.png" alt="답변아이콘">
+                                    <p>· 공채의 경우와 마찬가지로 매년 상/하반기에 걸쳐 년 2회 진행하며, 상반기의 경우 4월 ~ 5월, 하반기의 경우 10월 ~ 11월 진행하고 있습니다. (단, 채용 TO에 의해 롯데그룹 인턴 (주)코리아세븐 채용 인원이 없을 수 있으므로 해당 기간 자사 홈페이지 및 롯데그룹채용홈페이지에서 확인 바랍니다.)</p></div></div>
+                            </li>
+                        </ul>
+                        <button class="accordion_TableBtn">더보기 <span> +</span></button>
+                    </section>
+
+                        
+                </div>
+
+                <!-- 탑메뉴04 -->
+                <div class="tapmenu04">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">채용안내</p>
+                        </div>
+                        <p class="submenu_text">당신의 젊음과 열정 그리고 잠재력, 세븐일레븐이 더욱 빛나게 밝혀드리겠습니다.</p>
+                    </section>
+            
+                    <!-- 검색 -->
+                    <section class="recruit_search">
+                        <div class="search_box">
+                            <form action="" class="search_form" name="" method="">
+                                <fieldset>
+                                    <legend class="hide">키워드 검색</legend>
+                                    <label for="search" class="hide">입력</label>
+                                    <select id= "searchType" name="searchType" title="검색 조건을 선택해 주세요">
+                                        <option value="All" >제목 + 내용</option>
+                                        <option value="title" >제목</option>
+                                        <option value="conts" >내용</option>
+                                    </select>
+                                    <div class="search_line"><img src="../images/search_line.svg" alt="라인"></div>
+                                    <input type="text" id="searchText" name="searchText" value="" placeholder="검색어를 입력해주세요." title=""/>
+                                </fieldset>
+                            </form>
+                            <button class="search_btn">검색</button>
+                        </div>
+                    </section>
+
+                    <!-- 게시판 -->
+                    <section class="recruit_Table">
+                        <ul class="table_List">
+                            <a href="#">
+                                <li class="line_List01">
+                                <span>번호</span> 
+                                <span>채용구분</span>
+                                <span>제목</span>
+                                <span>접수기한</span>
+                                <span>진행상태</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>38</span>
+                                <span>신입</span>
+                                <span>2020년 2월 신입사원(JA) 및 경력직 채용</span>
+                                <span>2020-02-17</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>37</span>
+                                <span>신입</span>
+                                <span>2019년 4월 신입사원(JA) 및 경력직 채용</span>
+                                <span>2019-12-31</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>36</span>
+                                <span>경력</span>
+                                <span>점포개발, 영업관리 경력사원 상시채용</span>
+                                <span>2019-04-14</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>35</span>
+                                <span>경력</span>
+                                <span>2019년 3월 FC경력사원 채용</span>
+                                <span>2019-02-07</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>34</span>
+                                <span>신입</span>
+                                <span>2020년 2월 신입사원(JA) 및 경력직 채용</span>
+                                <span>2019-03-03</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>33</span>
+                                <span>경력</span>
+                                <span>2017년 4월 경력사원 공개채용</span>
+                                <span>2017-12-04</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>32</span>
+                                <span>신입</span>
+                                <span>2017년 5월 신입사원(JA) 및 경력직 채용</span>
+                                <span>2017-04-26</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>31</span>
+                                <span>신입</span>
+                                <span>11월 신입사원 채용</span>
+                                <span>2016-11-07</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>30</span>
+                                <span>경력</span>
+                                <span>2016년 11월 경력사원 공개채용</span>
+                                <span>2016-10-03</span>
+                                <span>마감</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="line_List02">
+                                <span>29</span>
+                                <span>경력</span>
+                                <span>2016년 하반기 경력사원 공개채용</span>
+                                <span>2016-09-01</span>
+                                <span>마감</span></li>
+                            </a>
+                        </ul>
+        
+                            <!-- 페이저 -->
+                            <div class="pageNationWrap">
+                                <div class="prevButtons">
+                                    <a href="#"><img src="../images/pre_img.png" alt="1페이지 전"/></a>
+                                </div>
+                                    <ul class="pageNation">
+                                        <li class="pIndex"><span><a href="#">1</a></span></li>
+                                        <li class="pIndex"><span><a href="#">2</a></span></li>
+                                        <li class="pIndex"><span><a href="#">3</a></span></li>
+                                    </ul>
+                                
+                                <div class="nextButtons">
+                                    <a href="#"><img src="../images/next_img.png" alt="1페이지 후"/></a>
+                                </div>
+                            </div>
+                    </section>
+                </div>
+            
+                
+            </div>
+    </div>
+    </main>
+    
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <!-- 푸터 로고 -->
+                <p class="footer_logo"><img src="images/footer_logo.png" alt=""></p>
+
+                <!-- 패밀리 사이트 -->
+                <ul class="familySite">
+                    <li class="famMenu">
+                    <div class="textWrap">
+                        <input type="checkbox"name=""id="familySite"/>
+                        <label for="familySite">
+                        <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                        <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="footer_bottom">
+                <!-- 약관 및 정책 -->
+                <div class="footer_menu">
+                    <h3 class="hide">약관 및 정책</h3>
+                    <ul>
+                        <li><a href="#none">사이트맵</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="#none">윤리핫라인</a></li>
+                        <li><a href="#none">불공정거래신고</a></li>
+                        <li><a href="#none">안전보건핫라인</a></li>
+                    </ul>
+                </div>
+
+                <!-- SNS -->
+                <div class="snsWrap">
+                    <div class="youtubeIcon">
+                        <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                            <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                    </div>
+                    <div class="instaIcon">
+                        <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                            <img src="../images/Instagram_logo.png" alt="인스타그램"
+                        /></a>
+                    </div>
+                    <div class="blogIcon">
+                        <a href="https://blog.naver.com/711sns"target="_blank">
+                            <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                    </div>
+                    <div class="facebookIcon">
+                        <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                            <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 연락처 & copyright -->
+            <div class="footer_text">
+                <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+            </div>
+
+            <!-- 인증 -->
+            <div class="ismsp_wrap">
+                <div class="ismsp_logo">
+                    <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                </div>
+                <div class="ismsp_text">
+                    <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                    <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

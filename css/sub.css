@@ -1,0 +1,147 @@
+        /* main */
+
+        /* 서브 메뉴 타이틀 */
+
+        .title_inner{text-align: center; margin-top: 131px; color: #333333; }
+
+        h3{font-size:45px; font-weight: bold;}
+
+        .sub_copy{font-size: 16px;height: 55px;} /*텍스트 align 추가*/
+
+        /* 탑메뉴 메뉴 */
+
+        .tab_button{margin: 0 auto; width: 1240px; position: relative;}
+
+        .tab_button_bg{position: absolute; width:100%; height:0px; z-index: 40; border-bottom: 1px solid #AAA;}
+
+        .tab_button ul{display: flex; font-size: 18px; color: #555; justify-content: center;}
+
+        .tab_button ul li{width: 177px;height: 65px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;position: relative;}
+
+            /* 탑메뉴 장식 | -> 1개 추가할때마다 left값 + 177px 해서 쓰시면 됩니다 */
+
+        .tab_button ul li:first-child::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+        .tab_button ul li:nth-child(2)::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+    
+        .tab_button ul li:nth-child(3):after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+        .tab_button ul li:nth-child(4)::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+    
+        .tab_button ul li:nth-child(5):after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+            /* 탑메뉴 (고정) */
+
+        .tab_button_fixed{position: fixed;z-index: 40;left: 50%;top: 0;transform: translateX(-50%);}
+
+        .tab_button_bg_fixed{position: fixed;height: 65px; background: #fff; z-index: 39;top: 0;}
+
+            /* 비활성화 탑메뉴 */
+
+        .tab_cont > div  {width: 100%; display: none;}
+        
+            /* 활성화된 탑메뉴 */
+
+        li.open{color: #147350;font-weight: bold;}
+
+        .tab_cont > div.open {display: block;}
+
+        /* 메인 컨텐츠 중앙 정렬 1240px */
+
+        .submenu, .recruit_search{margin: 0 auto; width: 1240px;}
+
+        /* 텍스트 컨텐츠 -> 불필요시 삭제 */
+
+        .sub_icon{display: flex; align-items: center;}
+
+        .submenu_top{display: flex; align-items: center;margin-top: 80px}
+
+        .submenu_title{padding-left: 26px; font-size: 30px;}
+
+            /*텍스트 컨텐츠_내용*/
+
+        .submenu_text{margin: 5px 0 0 36px; font-size: 17px; color: #555;}
+
+        .submenu_text span{font-weight: bold;}/* 텍스트 컨텐츠_글씨 강조 */
+
+        /* 검색박스 */
+
+        .recruit_search_box label{display: none;} /*이거 오버플로우 적용이 안되서 일단 안보이게 해놨어요 ^_ㅜ*/
+
+        .recruit_search_box{display: flex; justify-content: center; margin-top: 60px;}
+
+        #searchType, #searchText, .search_btn{border: none;}
+
+        .search_form fieldset{display: flex;}
+
+        .search_form{box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.12); width: 700px;height: 55px; display: flex; align-items: center;justify-content: center; border-radius: 35px; border: 1px solid #fff;}
+
+            /* 검색박스_select,text box*/
+
+        #searchType{padding: 0 10px; font-size: 15px}
+
+        #searchText{width: 510px; font-size: 17px;}
+
+        .search_line{display: flex;align-items: center; padding: 0 10px;}
+
+            /* 검색박스_버튼 */
+
+        .search_btn{border-radius: 35px; width: 120px; background-color: #147350; color: #fff; display: flex; justify-content: center; align-items: center; font-size: 19px; margin-left: 20px}
+        
+        .search_btn:hover{font-size: 20px;}
+    
+            /* 검색박스_포커스 */
+
+        #searchText:focus{outline: none;}
+
+        .search_form:focus-within {border: 1px solid #147350;}
+
+
+        /* 게시판 */
+        .recruit_Table{text-align: center; margin: 60px auto 0px; width: 1240px;}
+
+        .table_List li{height: 75px; display: flex;}
+
+            /* 게시판 너비 _ 갯수랑 너비 필요한 만큼 조정해서 쓰세요 */
+
+        .table_List li span:nth-child(1){width: 7%;}
+
+        .table_List li span:nth-child(2){width: 10%;}
+
+        .table_List li span:nth-child(3){width: 58%;}
+
+        .table_List li span:nth-child(4){width: 15%;}
+
+        .table_List li span:nth-child(5){width: 10%;}
+
+            /* 게시판 상단 */
+
+        .line_List01{background-color: #eee; color: #147350; align-items: center; border-top: 2px solid #147350; font-size: 17px;}
+
+            /* 게시판 내용 */
+
+        .line_List02{color: #333; align-items: center;font-size: 15px; border-bottom:1px solid #eee;}
+
+            /* 게시판 내용_hover효과 */
+
+        .line_List02:hover{color: #FF6C00;}
+
+        /* 페이저 */
+
+        .pageNationWrap{margin: 105px 0 150px; display: flex; justify-content: center;}
+
+        .pageNationWrap img{padding: 9px 30px;}
+
+        .pageNation{display: flex;}
+
+            /* 비활성 페이저 효과*/
+
+        .pageNation li{align-items: center; padding: 0 10px; font-size: 20px; color: #ddd;}
+
+            /* 활성화 페이저 효과*/
+
+        .pageNation li:nth-child(1) span{color: #147350; font-weight: bold;}
+
+
+
+
