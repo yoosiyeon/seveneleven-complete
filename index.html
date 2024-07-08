@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Author" content="http://www.7-eleven.co.kr/"/>
+<meta name="keywords" content="7-ELEVEN, 세븐일레븐"/>
+    <title>세븐일레븐</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.gallery.js"></script>
+</head>
+<body>
+
+
+    <!-- header -->
+    <header id="header" class="header">
+        <div class="header_bottom">
+            <!-- logo -->
+            <div class="logo_wrap">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="images/SevenElevenLogo_2.png" alt="seveneleven">
+                    </a>
+                </h1>
+            </div>
+        
+            <!-- gnb -->
+            <nav class="gnb">
+            <h2 class="hide">주요 메뉴</h2> 
+            <ul>
+                <li class="menu01">
+                    <a href="introduce/intro.html">세븐일레븐 소개</a>
+                    <ul>
+                        <li><a href="introduce/intro.html">회사소개</a></li>
+                        <li><a href="introduce/contribute.html">ESG 경영</a></li>
+                        <li><a href="introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                        <li><a href="introduce/noticeList.html">채용안내</a></li>
+                        <li><a href="introduce/news.html">공지사항</a></li>
+                        <li><a href="introduce/cardInfo.html">NEWS</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu02">
+                    <a href="event/eventList.html">이벤트</a>
+                    <ul>
+                        <li><a href="event/eventList.html">진행중인 이벤트</a></li>
+                        <li><a href="event/completeList.html">종료된 이벤트</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu03">
+                    <a href="event/completeList.html">상품 / 서비스</a>
+                    <ul>
+                        <li><a href="product/FreshfoodList.html">Fresh Food</a></li>
+                        <li><a href="product/7cafe.html">세븐 카페</a></li>
+                        <li><a href="product/presentList.html">이달의 증정할인</a></li>
+                        <li><a href="product/presentList.html">PB상품 / 신상품</a></li>
+                        <li><a href="product/cardInfo.html">할인·멤버십 카드</a></li>
+                        <li><a href="product/service.html">서비스 안내</a></li>
+                        <li><a href="product/sevenapp.html">세븐 APP</a></li>
+                        <li><a href="product/cvmsForm.html">고객의 소리</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu04">
+                    <a href="partner/partnerGuide.html">입점상담</a>
+                    <ul>
+                        <li><a href="partner/partnerGuide.html">상품입점안내</a></li>
+                        <li><a href="partner/partnerAdvice.html">입점상담</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu05">
+                    <a href="franchise/franchiseGuide.html">창업안내</a>
+                    <ul>
+                        <li><a href="franchise/franchiseGuide.html">창업가이드</a></li>
+                        <li><a href="franchise/franchiseAdvice.html">창업상담</a></li>
+                        <li><a href="franchise/franchiseExplan.html">창업설명회</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+            </nav>
+            <!-- map_search -->
+            <div class="map_search">
+                <a href="map_search.html">
+                <img src="images/pin.png" alt="매장찾기">
+                </a>
+            </div>
+        </div>
+        <div class="nav_bg"></div>
+    
+        <!-- top menu -->
+        <div class="top_menu">
+        <h2 class="hide">유틸메뉴</h2>
+            <ul>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="join.html">회원가입</a></li>
+            </ul>
+        </div>
+        </header>
+        <script>
+            $(document).ready(function(){
+                /* gnb_slideDown */
+                    $(".gnb>ul>li,.nav_bg").hover(function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                    },function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                    });           
+            });
+        </script>
+
+
+
+    <!-- main -->
+    <div class="main-carousel-container">
+        <div class="main-carousel">
+            <div class="main-carousel-inner">
+                <div class="main-carousel-item">
+                    <img src="images/main_image1.jpg" alt="이미지 1">
+                </div>
+                <div class="main-carousel-item">
+                    <img src="images/main_image2.jpg" alt="이미지 2">
+                </div>
+                <div class="main-carousel-item">
+                    <img src="images/main_image3.png" alt="이미지 3">
+                </div>
+                <div class="main-carousel-item">
+                    <img src="images/main_image4.jpg" alt="이미지 4">
+                </div>
+            </div>
+            <div class="main-carousel-controls">
+                <img class="main-carousel-control prev" src="images/arrowicon.png" alt="이전">
+                <img class="main-carousel-control next" src="images/arrowicon.png" alt="다음">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const carouselInner = document.querySelector('.main-carousel-inner');
+        const carouselItems = document.querySelectorAll('.main-carousel-item');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+
+        let currentIndex = 0;
+        const totalItems = carouselItems.length;
+
+        function goToSlide(index) {
+            if (index < 0) {
+                index = totalItems - 1;
+            } else if (index >= totalItems) {
+                index = 0;
+            }
+
+            carouselInner.style.transform = `translateX(-${index * 100}%)`;
+            currentIndex = index;
+        }
+
+        prevButton.addEventListener('click', () => {
+            goToSlide(currentIndex - 1);
+        });
+
+        nextButton.addEventListener('click', () => {
+            goToSlide(currentIndex + 1);
+        });
+
+        // 자동 슬라이드 추가 (3초마다)
+        setInterval(() => {
+            goToSlide(currentIndex + 1);
+        }, 3000);
+    </script>
+
+
+    <!-- pb상품 -->
+
+    <div class="pb-carousel-container">
+      <h2 class="pb-carousel-title">PB 상품</h2>
+      <button class="pb-prev-button"><img src="images/arrowicon.png" alt="Previous"></button>
+      <div class="pb-carousel-wrapper">
+        <div class="pb-carousel-slide">
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_1.jpg" alt="상품 1 이미지">
+              <p class="pb-product-info">가나초콜릿우유190ml<br><span>1,200원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_2.jpg" alt="상품 2 이미지">
+              <p class="pb-product-info">하몽슬라이스50g<br><span>5,500원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_3.jpg" alt="상품 3 이미지">
+              <p class="pb-product-info">먼작귀훈제메추리알쏙쏙5입<br><span>1,800원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_4.jpg" alt="상품 4 이미지">
+              <p class="pb-product-info">도라에몽크림카레덮밥<br><span>5,500원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_5.jpg" alt="상품 5 이미지">
+              <p class="pb-product-info">도라에몽치킨데리야끼덮밥<br><span>5,500원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_6.jpg" alt="상품 6 이미지">
+              <p class="pb-product-info">마이픽플레인쿠키링131g<br><span>2,200원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_7.jpg" alt="상품 7 이미지">
+              <p class="pb-product-info">마이픽딸기초코링120g<br><span>2,200원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_8.jpg" alt="상품 8 이미지">
+              <p class="pb-product-info">닭가슴살리얼바허브80g<br><span>2,900원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_9.jpg" alt="상품 9 이미지">
+              <p class="pb-product-info">요거톡스타볼132g<br><span>2,200원</span></p>
+            </a>
+          </div>
+          <div class="pb-product-item">
+            <a href="#">
+              <img src="images/pb_10.jpg" alt="상품 10 이미지">
+              <p class="pb-product-info">천하장사더건강하닭60g<br><span>2,200원</span></p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="pb-next-button"><img src="images/arrowicon.png" alt="Next"></button>
+      
+      <a href="./product/presentList.html" class="pb-more-button">더보기</a>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const $carouselSlide = $('.pb-carousel-slide');
+        const $prevButton = $('.pb-prev-button');
+        const $nextButton = $('.pb-next-button');
+        const $productItems = $('.pb-product-item');
+    
+        let counter = 0;
+        const itemWidth = $productItems.outerWidth(true); // 상품 아이템의 전체 너비(마진 포함)
+        const itemsPerSlide = 5;
+        const totalItems = $productItems.length;
+        const totalSlides = Math.ceil(totalItems / itemsPerSlide);
+    
+        function updateCarousel() {
+          const newTransform = -itemWidth * counter * itemsPerSlide;
+          $carouselSlide.css('transform', `translateX(${newTransform}px)`);
+        }
+    
+        $prevButton.on('click', function() {
+          if (counter > 0) {
+            counter--;
+          } else {
+            counter = totalSlides - 1; // 마지막 슬라이드로 이동
+          }
+          updateCarousel();
+        });
+    
+        $nextButton.on('click', function() {
+          if (counter < totalSlides - 1) {
+            counter++;
+          } else {
+            counter = 0; // 처음으로 돌아가기
+          }
+          updateCarousel();
+        });
+    
+        $(window).on('resize', function() {
+          // 창 크기가 변경될 때 슬라이드 위치를 업데이트
+          updateCarousel();
+        });
+    
+        // 슬라이드를 처음 상태로 업데이트
+        updateCarousel();
+      });
+    </script>
+
+<!-- 신상품 -->
+
+<div class="np-carousel-container">
+  <h2 class="np-carousel-title">NP 상품</h2>
+  <button class="np-prev-button"><img src="images/arrowicon.png" alt="Previous"></button>
+  <div class="np-carousel-wrapper">
+    <div class="np-carousel-slide">
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_1.jpg" alt="상품 1 이미지">
+          <p class="np-product-info">가나초콜릿우유190ml<br><span>1,200원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_2.jpg" alt="상품 2 이미지">
+          <p class="np-product-info">하몽슬라이스50g<br><span>5,500원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_3.jpg" alt="상품 3 이미지">
+          <p class="np-product-info">먼작귀훈제메추리알쏙쏙5입<br><span>1,800원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_4.jpg" alt="상품 4 이미지">
+          <p class="np-product-info">도라에몽크림카레덮밥<br><span>5,500원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_5.jpg" alt="상품 5 이미지">
+          <p class="np-product-info">도라에몽치킨데리야끼덮밥<br><span>5,500원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_6.jpg" alt="상품 6 이미지">
+          <p class="np-product-info">마이픽플레인쿠키링131g<br><span>2,200원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_7.jpg" alt="상품 7 이미지">
+          <p class="np-product-info">마이픽딸기초코링120g<br><span>2,200원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_8.jpg" alt="상품 8 이미지">
+          <p class="np-product-info">닭가슴살리얼바허브80g<br><span>2,900원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_9.jpg" alt="상품 9 이미지">
+          <p class="np-product-info">요거톡스타볼132g<br><span>2,200원</span></p>
+        </a>
+      </div>
+      <div class="np-product-item">
+        <a href="#">
+          <img src="images/np_10.jpg" alt="상품 10 이미지">
+          <p class="np-product-info">천하장사더건강하닭60g<br><span>2,200원</span></p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <button class="np-next-button"><img src="images/arrowicon.png" alt="Next"></button>
+  
+  <a href="./product/presentList.html#" class="np-more-button">더보기</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    const $carouselSlide = $('.np-carousel-slide');
+    const $prevButton = $('.np-prev-button');
+    const $nextButton = $('.np-next-button');
+    const $productItems = $('.np-product-item');
+
+    let counter = 0;
+    const itemWidth = $productItems.outerWidth(true); // 상품 아이템의 전체 너비(마진 포함)
+    const itemsPerSlide = 5;
+    const totalItems = $productItems.length;
+    const totalSlides = Math.ceil(totalItems / itemsPerSlide);
+
+    function updateCarousel() {
+      const newTransform = -itemWidth * counter * itemsPerSlide;
+      $carouselSlide.css('transform', `translateX(${newTransform}px)`);
+    }
+
+    $prevButton.on('click', function() {
+      if (counter > 0) {
+        counter--;
+      } else {
+        counter = totalSlides - 1; // 마지막 슬라이드로 이동
+      }
+      updateCarousel();
+    });
+
+    $nextButton.on('click', function() {
+      if (counter < totalSlides - 1) {
+        counter++;
+      } else {
+        counter = 0; // 처음으로 돌아가기
+      }
+      updateCarousel();
+    });
+
+    $(window).on('resize', function() {
+      // 창 크기가 변경될 때 슬라이드 위치를 업데이트
+      updateCarousel();
+    });
+
+    // 슬라이드를 처음 상태로 업데이트
+    updateCarousel();
+  });
+</script>
+
+
+    <!-- 세븐스토리 -->
+    <section class="sevenstory-section">
+        <div class="sevenstory-container">
+            <div class="sevenstory-title">세븐<br>STORY</div>
+            <div class="sevenstory-item">
+                <a href="#none">
+                    <img src="images/sevenstory_01.jpg" alt="아니.. 이장우가 왜 동국대에서 나와?!😮ㅣ맛장우의 무장해제 푸드트럭 Ep.2 🚗">
+                    <p>아니.. 이장우가 왜 동국대에서 나와?!😮ㅣ맛장우의 무장해제 푸드트럭 Ep.2 🚗</p>
+                </a>
+            </div>
+            <div class="sevenstory-item">
+                <a href="#none">
+                    <img src="images/sevenstory_02.jpg" alt="러블리즈 지우가 알려주는 세븐일레븐 로고에 숨겨진 비밀👀">
+                    <p>러블리즈 지우가 알려주는 세븐일레븐 로고에 숨겨진 비밀👀</p>
+                </a>
+            </div>
+            <div class="sevenstory-item">
+                <a href="#none">
+                    <img src="images/sevenstory_03.jpg" alt=" 로이킴(ROY KIM) 라이브 - 봄봄봄, 잘 지내자, 우리, 그때 헤어지면 돼, 너의 곁에 세븐일레븐 | 세븐스테이지 EP.9">
+                    <p> 로이킴(ROY KIM) 라이브 - 봄봄봄, 잘 지내자, 우리, 그때 헤어지면 돼, 너의 곁에 세븐일레븐 | 세븐스테이지 EP.9</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+<!-- 입점상담-->
+<div class="consult-section-container">
+        <section class="consult-section-box partner">
+            <a href="partner/partnerAdvice.html">
+                <img src="images/partner.png" alt="입점상담 이미지">
+                <div class="consult-section-box-content">
+                    <h2>입점상담</h2>
+                    <p>세븐일레븐의 <br>파트너가 되어주세요</p>
+                </div>
+                <span class="consult-more"></span>
+            </a>
+        </section>
+
+        <section class="consult-section-box franchise">
+            <a href="franchise/franchiseAdvice.html">
+                <img src="images/franchise.png" alt="창업상담 이미지">
+                <div class="consult-section-box-content">
+                    <h2>창업상담</h2>
+                    <p>가치를 공유하고<br> 함께 나아가요</p>
+                </div>
+                <span class="consult-more"></span>
+            </a>
+        </section>
+    </div>
+
+<!-- 고객상담 -->
+<div class="container-info">
+  <section class="add-info">
+      <h2>고객센터 상담전화</h2>
+      <div class="phone-info">
+          <p>평일 9시 ~ 18시</p>
+          <div class="phone">
+              <p>1577-0711</p>
+          </div>
+      </div>
+
+      <ul>
+          <li>
+              <a href="product/service.html">
+                  <div>
+                      <img src="images/D_service.png" alt="택배 서비스">
+                      <span>택배서비스</span>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="smartpick.html">
+                  <div>
+                      <img src="images/smartpick.png" alt="스마트픽">
+                      <span>스마트픽</span>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="product/cardInfo.html">
+                  <div>
+                      <img src="images/discountcard.png" alt="할인카드">
+                      <span>할인카드</span>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="introduce/news.html">
+                  <div>
+                      <img src="images/news.png" alt="NEWS">
+                      <span>NEWS</span>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="introduce/recruitPerson.html">
+                  <div>
+                      <img src="images/hand.png" alt="채용 안내">
+                      <span>채용 안내</span>
+                  </div>
+              </a>
+          </li>
+      </ul>
+  </section>
+
+  <section class="info-info">
+      <h2>공지사항</h2>
+      <div class="notice">
+          <a href="introduce/noticeList.html">롯데씨브이에스711 2023년 결산공고</a>
+          <a href="introduce/noticeList.html">(주)코리아세븐 2023년도 결산공고</a>
+          <a href="introduce/noticeList.html">(주)코리아세븐 2024년 1분기 이사회 운영 안내</a>
+          <a href="introduce/noticeList.html">시스템 점검 안내</a>
+          <div class="more-link">
+              <a href="introduce/noticeList.html">
+                  <img src="images/플러스.png" alt="더보기">
+              </a>
+          </div>
+      </div>
+  </section>
+</div>
+
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <div class="footer_wrap">
+          <div class="footer_top">
+              <!-- 푸터 로고 -->
+              <p class="footer_logo"><img src="images/footer_logo.png" alt=""></p>
+
+              <!-- 패밀리 사이트 -->
+              <ul class="familySite">
+                  <li class="famMenu">
+                  <div class="textWrap">
+                      <input type="checkbox"name=""id="familySite"/>
+                      <label for="familySite">
+                      <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                      <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                              <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                              <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                              <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                              <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                              <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                              <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                              <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                              <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                              <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                              <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                              <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                              <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                              <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                              <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                              <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                              <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                              <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                              <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                              <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                              <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                              <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                              <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                              <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                              <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                              <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                              <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                              <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                              <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                              <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                              <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                              <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                              <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                              <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                              <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                              <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                              <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                              <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                              <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                              <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                              <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                              <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                              <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                              <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                              <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                              <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                              <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                              <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                              <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                              <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                              <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                              <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                              <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                              <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                              <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                              <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                              <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                              <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                              <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                              <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                              <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                              <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                              <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                              <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                              <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                              <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                          </ul>
+                      </label>
+                  </div>
+                  </li>
+              </ul>
+          </div>
+
+
+          <div class="footer_bottom">
+              <!-- 약관 및 정책 -->
+              <div class="footer_menu">
+                  <h3 class="hide">약관 및 정책</h3>
+                  <ul>
+                      <li><a href="#none">사이트맵</a></li>
+                      <li><a href="#none">개인정보처리방침</a></li>
+                      <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                      <li><a href="#none">윤리핫라인</a></li>
+                      <li><a href="#none">불공정거래신고</a></li>
+                      <li><a href="#none">안전보건핫라인</a></li>
+                  </ul>
+              </div>
+
+              <!-- SNS -->
+              <div class="snsWrap">
+                  <div class="youtubeIcon">
+                      <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                          <img src="images/youtube_logo.png" alt="유튜브"/></a>
+                  </div>
+                  <div class="instaIcon">
+                      <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                          <img src="images/Instagram_logo.png" alt="인스타그램"
+                      /></a>
+                  </div>
+                  <div class="blogIcon">
+                      <a href="https://blog.naver.com/711sns"target="_blank">
+                          <img src="images/blog_logo.png" alt="네이버블로그"/></a>
+                  </div>
+                  <div class="facebookIcon">
+                      <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                          <img src="images/facebook_logo.png" alt="페이스북"/></a>
+                  </div>
+              </div>
+          </div>
+
+      
+          <!-- 연락처 & copyright -->
+          <div class="footer_text">
+              <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+              <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+              <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+              <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+          </div>
+
+          <!-- 인증 -->
+          <div class="ismsp_wrap">
+              <div class="ismsp_logo">
+                  <img src="images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+              </div>
+              <div class="ismsp_text">
+                  <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                  <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+              </div>
+          </div>
+
+      </div>
+  </footer>
+<script>
+  $(document).ready(function(){
+      /* gnb_slideDown */
+          $(".gnb>ul>li, .nav_bg").hover(function(){
+              $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+          },function(){
+              $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+          });
+
+      /* side_menu_fixed*/
+      $(window).scroll(function(){
+          let sT = $(window).scrollTop();
+          
+          if(sT > 400){
+              $(".side_menu").addClass("side_menu_fixed");
+              $(".side_menu_bg").addClass("side_menu_bg_fixed");
+          } else{
+              $(".side_menu").removeClass("side_menu_fixed");
+              $(".side_menu_bg").removeClass("side_menu_bg_fixed");
+          }
+      });
+
+  });
+</script>
+</body>
+</html>
