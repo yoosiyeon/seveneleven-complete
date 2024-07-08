@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="http://www.7-eleven.co.kr/"/>
+	<meta name="keywords" content="7-ELEVEN, 세븐일레븐"/>
+	<title>Freshfood</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/sub.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .tab_button ul li:first-child::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+.tab_button ul li:nth-child(2)::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+.tab_button ul li:nth-child(3):after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+.tab_button ul li:nth-child(4)::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #fcfcfc;}
+
+        /* FreshFood 관련 CSS */
+
+        .freshfood-container {
+            width: 80%;
+            max-width: 1100px;
+            margin: 10px auto;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 80px;
+        }
+
+        .freshfood-product-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .freshfood-product-item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            width: 230px;
+            height: auto;
+        }
+
+        .freshfood-product-item:hover {
+            transform: scale(1.05);
+        }
+
+        .freshfood-product-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .freshfood-product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .freshfood-product-info {
+            margin-top: auto;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .freshfood-product-info span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #42a116;
+        }
+
+        .freshfood-more-button {
+            display: block;
+            margin: 50px auto;
+            padding: 10px 20px;
+            background-color: #42a116;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .freshfood-more-button:hover {
+            background-color: #36910e;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .freshfood-product-item img {
+            max-width: 100%;
+            height: 150px
+        }
+    </style>
+
+
+
+        </style>
+        <script>
+            $(document).ready(function(){
+                /* 탑메뉴 */
+                    $(".tab_button li").click(function () {
+                    var idx = $(this).index();
+                    $(this).addClass("open").siblings().removeClass("open");
+
+                    $(".tab_cont>div")
+                    .eq(idx).addClass("open").siblings(".tab_cont>div").removeClass("open");
+
+                });
+            })
+        </script>
+</head>
+<body>
+
+    <!-- header -->
+    <header id="header" class="header">
+        <div class="header_bottom">
+            <!-- logo -->
+            <div class="logo_wrap">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="../images/SevenElevenLogo.svg" alt="seveneleven" width="181px" height="33px">
+                    </a>
+                </h1>
+            </div>
+        
+            <!-- gnb -->
+            <nav class="gnb">
+            <h2 class="hide">주요 메뉴</h2> 
+            <ul>
+                <li class="menu01">
+                    <a href="../introduce/intro.html">세븐일레븐 소개</a>
+                    <ul>
+                        <li><a href="../introduce/intro.html">회사소개</a></li>
+                        <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                        <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                        <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                        <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                        <li><a href="../introduce/news.html">NEWS</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu02">
+                    <a href="../event/eventList.html">이벤트</a>
+                    <ul>
+                        <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                        <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu03">
+                    <a href="../event/completeList.html">상품 / 서비스</a>
+                    <ul>
+                        <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                        <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                        <li><a href="../product/eventProduct.html">이달의 증정할인</a></li>
+                        <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                        <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                        <li><a href="../product/service.html">서비스 안내</a></li>
+                        <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                        <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu04">
+                    <a href="../partner/partnerGuide.html">입점상담</a>
+                    <ul>
+                        <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                        <li><a href="https://www.7-eleven.co.kr/mp/main.asp">동반성장<img src="../images/arrow-up-right.png"alt="동반성장 링크가기"></a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu05">
+                    <a href="../franchise/franchiseGuide.html">창업안내</a>
+                    <ul>
+                        <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                        <li><a href="../franchise/franchiseExplan.html">창업절차</a></li>
+                        <li><a href="../franchise/franchiseAdvice.html">창업설명회</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+            </nav>
+            <!-- map_search -->
+            <div class="map_search">
+                <a href="../map_search.html">
+                <img src="../images/pin.png" alt="매장찾기">
+                </a>
+            </div>
+        </div>
+        <div class="nav_bg"></div>
+    
+        <!-- top menu -->
+        <div class="top_menu">
+        <h2 class="hide">유틸메뉴</h2>
+            <ul>
+                <li><a href="../login.html">로그인</a></li>
+                <li><a href="../join.html">회원가입</a></li>
+            </ul>
+        </div>
+        </header>
+        <script>
+            $(document).ready(function(){
+                /* gnb_slideDown */
+                    $(".gnb>ul>li,.nav_bg").hover(function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                    },function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                    });
+    
+                /* side_menu_fixed*/
+                $(window).scroll(function(){
+                    let sT = $(window).scrollTop();
+                    
+                    if(sT > 400){
+                        $(".tab_button").addClass("tab_button_fixed");
+                        $(".tab_button_bg").addClass("tab_button_bg_fixed");
+                    } else{
+                        $(".tab_button").removeClass("tab_button_fixed");
+                        $(".tab_button_bg").removeClass("tab_button_bg_fixed");
+                    }
+                    });
+    
+            })
+        </script>
+    <!-- main -->
+    <main>
+        <div id="container"> 
+            <!-- 서브 메뉴 타이틀 -->
+            <div class="title_inner">
+                <h3 class="title_page">Fresh Food</h3>
+                <p class="sub_copy">최상의 맛과 품질, 모두가 인정하는 세븐일레븐 푸드를 추천합니다.</p>
+            </div>
+    
+            <!-- 탑메뉴 버튼-->
+                <div class="tab_button">
+                    <ul>
+                        <li class="open"><a href="#">전체</a></li>
+                        <li><a href="#">도시락 / 조리면</a></li>
+                        <li><a href="#">삼각김밥 / 김밥</a></li>
+                        <li><a href="#">샌드위치 / 햄버거</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="tab_button_bg"></div>
+    
+    
+    
+                <div class="recruit_search_box">
+                    <form class="search_form" onsubmit="return false;">
+                        <fieldset>
+                            <legend class="hide">키워드 검색</legend>
+                            <label for="searchText" class="hide">입력</label>
+                            <input type="text" id="searchText" name="searchText" value="" placeholder="상품 이름을 입력해주세요." title=""/>
+                        </fieldset>
+                    </form>
+                    <button class="search_btn" onclick="searchProduct()">검색</button>
+                </div>
+    
+    
+    
+        
+            <!-- 탑메뉴 내용 -->
+                <div class="tab_cont">
+                    <!-- 탑메뉴01 -->
+                    <div class="tapmenu01 open">
+                        <div class="freshfood-container">
+                            <div class="freshfood-product-list" id="productList">
+                                <!-- 상품들 -->
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_5.jpg" alt="콘참치샐러드샌드">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_6.jpg" alt="크랜베리리코타치즈샌드">
+                                        <div class="freshfood-product-info">
+                                            크랜베리리코타치즈샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_7.jpg" alt="콘참치샐러드롤">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드롤<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_8.jpg" alt="정통함박스테이크도시락">
+                                        <div class="freshfood-product-info">
+                                            정통함박스테이크도시락<br>
+                                            <span>1,200원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_9.jpg" alt="맛장우삼각김밥참치마요">
+                                        <div class="freshfood-product-info">
+                                            맛장우삼각김밥참치마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_10.jpg" alt="소고기고추장&참치마요">
+                                        <div class="freshfood-product-info">
+                                            소고기고추장&참치마요<br>
+                                            <span>1,800원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_5.jpg" alt="콘참치샐러드샌드">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_6.jpg" alt="크랜베리리코타치즈샌드">
+                                        <div class="freshfood-product-info">
+                                            크랜베리리코타치즈샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+    
+                                <!-- 추가적인 상품들을 이어서 넣으세요 -->
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_7.jpg" alt="콘참치샐러드롤">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드롤<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_8.jpg" alt="정통함박스테이크도시락">
+                                        <div class="freshfood-product-info">
+                                            정통함박스테이크도시락<br>
+                                            <span>1,200원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_9.jpg" alt="맛장우삼각김밥참치마요">
+                                        <div class="freshfood-product-info">
+                                            맛장우삼각김밥참치마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_10.jpg" alt="소고기고추장&참치마요">
+                                        <div class="freshfood-product-info">
+                                            소고기고추장&참치마요<br>
+                                            <span>1,800원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- 이렇게 추가하세요 -->
+                            </div>
+                            <div id="noResultsMessage" class="hidden">결과가 없습니다.</div>
+                            <button class="freshfood-more-button" id="loadMoreButton">더보기</button>
+                        </div>
+                        
+    
+                    </div>
+                    
+                    <!-- 탑메뉴02 -->
+                    <div class="tapmenu02">
+                        <div class="freshfood-container">
+                            <div class="freshfood-product-list" id="productList">
+                                <!-- 상품들 -->
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_1.jpg" alt="주문하신아메리카노300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신아메리카노300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_1.jpg" alt="주문하신아메리카노300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신아메리카노300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_1.jpg" alt="주문하신아메리카노300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신아메리카노300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_1.jpg" alt="주문하신아메리카노300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신아메리카노300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_2.jpg" alt="주문하신카페라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신카페라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_2.jpg" alt="주문하신카페라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신카페라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_2.jpg" alt="주문하신카페라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신카페라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_2.jpg" alt="주문하신카페라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신카페라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_3.jpg" alt="주문하신카라멜마끼야또">
+                                        <div class="freshfood-product-info">
+                                            주문하신카라멜마끼야또<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_3.jpg" alt="주문하신카라멜마끼야또">
+                                        <div class="freshfood-product-info">
+                                            주문하신카라멜마끼야또<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_3.jpg" alt="주문하신카라멜마끼야또">
+                                        <div class="freshfood-product-info">
+                                            주문하신카라멜마끼야또<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_3.jpg" alt="주문하신카라멜마끼야또">
+                                        <div class="freshfood-product-info">
+                                            주문하신카라멜마끼야또<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_4.jpg" alt="주문하신초코라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신초코라떼300ml<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_4.jpg" alt="주문하신초코라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신초코라떼300ml<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_4.jpg" alt="주문하신초코라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신초코라떼300ml<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_4.jpg" alt="주문하신초코라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신초코라떼300ml<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+    
+                                <!-- 추가적인 상품 -->
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_7.jpg" alt="콘참치샐러드롤">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드롤<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_8.jpg" alt="정통함박스테이크도시락">
+                                        <div class="freshfood-product-info">
+                                            정통함박스테이크도시락<br>
+                                            <span>1,200원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_9.jpg" alt="맛장우삼각김밥참치마요">
+                                        <div class="freshfood-product-info">
+                                            맛장우삼각김밥참치마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_10.jpg" alt="소고기고추장&참치마요">
+                                        <div class="freshfood-product-info">
+                                            소고기고추장&참치마요<br>
+                                            <span>1,800원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+    
+                            </div>
+                            <div id="noResultsMessage" class="hidden">결과가 없습니다.</div>
+                            <button class="freshfood-more-button" id="loadMoreButton">더보기</button>
+                        </div>
+    
+    
+                    </div>
+    
+                    <!-- 탑메뉴03 -->
+                    <div class="tapmenu03">
+                        <div class="freshfood-container">
+                            <div class="freshfood-product-list" id="productList">
+                                <!-- 상품들 -->
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_5.jpg" alt="주문하신커피쿠키라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신커피쿠키라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_5.jpg" alt="주문하신커피쿠키라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신커피쿠키라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_5.jpg" alt="주문하신커피쿠키라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신커피쿠키라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_5.jpg" alt="주문하신커피쿠키라떼300ml">
+                                        <div class="freshfood-product-info">
+                                            주문하신커피쿠키라떼300ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_5.jpg" alt="콘참치샐러드샌드">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_6.jpg" alt="크랜베리리코타치즈샌드">
+                                        <div class="freshfood-product-info">
+                                            크랜베리리코타치즈샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_7.jpg" alt="콘참치샐러드롤">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드롤<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_8.jpg" alt="정통함박스테이크도시락">
+                                        <div class="freshfood-product-info">
+                                            정통함박스테이크도시락<br>
+                                            <span>1,200원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_9.jpg" alt="맛장우삼각김밥참치마요">
+                                        <div class="freshfood-product-info">
+                                            맛장우삼각김밥참치마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_10.jpg" alt="소고기고추장&참치마요">
+                                        <div class="freshfood-product-info">
+                                            소고기고추장&참치마요<br>
+                                            <span>1,800원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_5.jpg" alt="콘참치샐러드샌드">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_6.jpg" alt="크랜베리리코타치즈샌드">
+                                        <div class="freshfood-product-info">
+                                            크랜베리리코타치즈샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+    
+                                <!-- 추가적인 상품 -->
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_7.jpg" alt="콘참치샐러드롤">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드롤<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_8.jpg" alt="정통함박스테이크도시락">
+                                        <div class="freshfood-product-info">
+                                            정통함박스테이크도시락<br>
+                                            <span>1,200원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_9.jpg" alt="맛장우삼각김밥참치마요">
+                                        <div class="freshfood-product-info">
+                                            맛장우삼각김밥참치마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_10.jpg" alt="소고기고추장&참치마요">
+                                        <div class="freshfood-product-info">
+                                            소고기고추장&참치마요<br>
+                                            <span>1,800원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                            <div id="noResultsMessage" class="hidden">결과가 없습니다.</div>
+                            <button class="freshfood-more-button" id="loadMoreButton">더보기</button>
+                        </div>
+                    </div>
+    
+    
+                    <!-- 탑메뉴04 -->
+                    <div class="tapmenu04">
+                        <div class="freshfood-container">
+                            <div class="freshfood-product-list" id="productList">
+                                <!-- 상품들 -->
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_9.jpg" alt="앙리마티스카페라떼250ml">
+                                        <div class="freshfood-product-info">
+                                            앙리마티스카페라떼250ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_9.jpg" alt="앙리마티스카페라떼250ml">
+                                        <div class="freshfood-product-info">
+                                            앙리마티스카페라떼250ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_9.jpg" alt="앙리마티스카페라떼250ml">
+                                        <div class="freshfood-product-info">
+                                            앙리마티스카페라떼250ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/pb_9.jpg" alt="앙리마티스카페라떼250ml">
+                                        <div class="freshfood-product-info">
+                                            앙리마티스카페라떼250ml<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_5.jpg" alt="콘참치샐러드샌드">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_6.jpg" alt="크랜베리리코타치즈샌드">
+                                        <div class="freshfood-product-info">
+                                            크랜베리리코타치즈샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_7.jpg" alt="콘참치샐러드롤">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드롤<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_8.jpg" alt="정통함박스테이크도시락">
+                                        <div class="freshfood-product-info">
+                                            정통함박스테이크도시락<br>
+                                            <span>1,200원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_9.jpg" alt="맛장우삼각김밥참치마요">
+                                        <div class="freshfood-product-info">
+                                            맛장우삼각김밥참치마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_10.jpg" alt="소고기고추장&참치마요">
+                                        <div class="freshfood-product-info">
+                                            소고기고추장&참치마요<br>
+                                            <span>1,800원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_5.jpg" alt="콘참치샐러드샌드">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item">
+                                    <a href="#none">
+                                        <img src="../images/ff_6.jpg" alt="크랜베리리코타치즈샌드">
+                                        <div class="freshfood-product-info">
+                                            크랜베리리코타치즈샌드<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+    
+                                <!-- 추가적인 상품 -->
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_7.jpg" alt="콘참치샐러드롤">
+                                        <div class="freshfood-product-info">
+                                            콘참치샐러드롤<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_8.jpg" alt="정통함박스테이크도시락">
+                                        <div class="freshfood-product-info">
+                                            정통함박스테이크도시락<br>
+                                            <span>1,200원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_9.jpg" alt="맛장우삼각김밥참치마요">
+                                        <div class="freshfood-product-info">
+                                            맛장우삼각김밥참치마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_10.jpg" alt="소고기고추장&참치마요">
+                                        <div class="freshfood-product-info">
+                                            소고기고추장&참치마요<br>
+                                            <span>1,800원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_1.jpg" alt="두툼한등심돈까스버거">
+                                        <div class="freshfood-product-info">
+                                            두툼한등심돈까스버거<br>
+                                            <span>3,700원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_2.jpg" alt="에그마요&불고기유부초밥">
+                                        <div class="freshfood-product-info">
+                                            에그마요&불고기유부초밥<br>
+                                            <span>2,900원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_3.jpg" alt="참치김치볶음밥&치킨마요">
+                                        <div class="freshfood-product-info">
+                                            참치김치볶음밥&치킨마요<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="freshfood-product-item hidden">
+                                    <a href="#none">
+                                        <img src="../images/ff_4.jpg" alt="오므라이스에그말이">
+                                        <div class="freshfood-product-info">
+                                            오므라이스에그말이<br>
+                                            <span>5,500원</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <!-- 후... -->
+                            </div>
+                            <div id="noResultsMessage" class="hidden">결과가 없습니다.</div>
+                            <button class="freshfood-more-button" id="loadMoreButton">더보기</button>
+                        </div>
+                        </div>
+    
+                </div>
+        </main>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 탑메뉴 1
+                var menu1ProductList = document.querySelector('.tapmenu01 .freshfood-product-list');
+                var menu1LoadMoreButton = document.querySelector('.tapmenu01 .freshfood-more-button');
+                var itemsToShow1 = 16;
+                var itemsPerLoad1 = 8;
+                var visibleItemCount1 = itemsToShow1;
+        
+                toggleVisibility(menu1ProductList, menu1LoadMoreButton, visibleItemCount1, itemsPerLoad1);
+        
+                menu1LoadMoreButton.addEventListener('click', function() {
+                    visibleItemCount1 += itemsPerLoad1;
+                    toggleVisibility(menu1ProductList, menu1LoadMoreButton, visibleItemCount1, itemsPerLoad1);
+                });
+        
+                // 탑메뉴 2
+                var menu2ProductList = document.querySelector('.tapmenu02 .freshfood-product-list');
+                var menu2LoadMoreButton = document.querySelector('.tapmenu02 .freshfood-more-button');
+                var itemsToShow2 = 16;
+                var itemsPerLoad2 = 8;
+                var visibleItemCount2 = itemsToShow2;
+        
+                toggleVisibility(menu2ProductList, menu2LoadMoreButton, visibleItemCount2, itemsPerLoad2);
+        
+                menu2LoadMoreButton.addEventListener('click', function() {
+                    visibleItemCount2 += itemsPerLoad2;
+                    toggleVisibility(menu2ProductList, menu2LoadMoreButton, visibleItemCount2, itemsPerLoad2);
+                });
+        
+                // 탑메뉴 3
+                var menu3ProductList = document.querySelector('.tapmenu03 .freshfood-product-list');
+                var menu3LoadMoreButton = document.querySelector('.tapmenu03 .freshfood-more-button');
+                var itemsToShow3 = 16;
+                var itemsPerLoad3 = 8;
+                var visibleItemCount3 = itemsToShow3;
+        
+                toggleVisibility(menu3ProductList, menu3LoadMoreButton, visibleItemCount3, itemsPerLoad3);
+        
+                menu3LoadMoreButton.addEventListener('click', function() {
+                    visibleItemCount3 += itemsPerLoad3;
+                    toggleVisibility(menu3ProductList, menu3LoadMoreButton, visibleItemCount3, itemsPerLoad3);
+                });
+        
+                // 탑메뉴 4
+                var menu4ProductList = document.querySelector('.tapmenu04 .freshfood-product-list');
+                var menu4LoadMoreButton = document.querySelector('.tapmenu04 .freshfood-more-button');
+                var itemsToShow4 = 16;
+                var itemsPerLoad4 = 8;
+                var visibleItemCount4 = itemsToShow4;
+        
+                toggleVisibility(menu4ProductList, menu4LoadMoreButton, visibleItemCount4, itemsPerLoad4);
+        
+                menu4LoadMoreButton.addEventListener('click', function() {
+                    visibleItemCount4 += itemsPerLoad4;
+                    toggleVisibility(menu4ProductList, menu4LoadMoreButton, visibleItemCount4, itemsPerLoad4);
+                });
+        
+                function toggleVisibility(productList, loadMoreButton, visibleItemCount, itemsPerLoad) {
+                    var items = productList.querySelectorAll('.freshfood-product-item');
+        
+                    items.forEach(function(item) {
+                        item.classList.add('hidden');
+                    });
+        
+                    for (var i = 0; i < visibleItemCount && i < items.length; i++) {
+                        items[i].classList.remove('hidden');
+                    }
+        
+                    if (visibleItemCount >= items.length) {
+                        loadMoreButton.style.display = 'none';
+                    } else {
+                        loadMoreButton.style.display = 'block';
+                    }
+                }
+        
+                // 상품 검색 함수
+                function searchProduct() {
+                    const searchText = document.getElementById('searchText').value.trim().toLowerCase();
+                    const items = document.querySelectorAll('.freshfood-product-item');
+                    const noResultsMessage = document.getElementById('noResultsMessage');
+                    let found = false;
+        
+                    items.forEach(item => {
+                        const productName = item.querySelector('.freshfood-product-info').textContent.trim().toLowerCase();
+        
+                        if (productName.includes(searchText)) {
+                            item.style.display = 'block'; // 일치하는 상품 표시
+                            found = true;
+                        } else {
+                            item.style.display = 'none'; // 일치하지 않는 상품 숨김
+                        }
+                    });
+        
+                    if (!found) {
+                        noResultsMessage.classList.remove('hidden');
+                    } else {
+                        noResultsMessage.classList.add('hidden');
+                    }
+                }
+        
+                // 엔터 키를 눌렀을 때 searchProduct 함수를 호출
+                document.getElementById('searchText').addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter') {
+                        event.preventDefault(); // 폼 제출을 막음
+                        searchProduct();
+                    }
+                });
+        
+                // 검색 버튼 클릭 시 searchProduct 함수를 호출
+                document.querySelector('.search_btn').addEventListener('click', function(event) {
+                    event.preventDefault(); // 기본 동작 막기 (페이지 리로드 방지)
+                    searchProduct();
+                });
+            });
+        </script>
+</main>
+    
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <!-- 푸터 로고 -->
+                <p class="footer_logo"><img src="../images/footer_logo.png" alt=""></p>
+
+                <!-- 패밀리 사이트 -->
+                <ul class="familySite">
+                    <li class="famMenu">
+                    <div class="textWrap">
+                        <input type="checkbox"name=""id="familySite"/>
+                        <label for="familySite">
+                        <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                        <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="footer_bottom">
+                <!-- 약관 및 정책 -->
+                <div class="footer_menu">
+                    <h3 class="hide">약관 및 정책</h3>
+                    <ul>
+                        <li><a href="#none">사이트맵</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="#none">윤리핫라인</a></li>
+                        <li><a href="#none">불공정거래신고</a></li>
+                        <li><a href="#none">안전보건핫라인</a></li>
+                    </ul>
+                </div>
+
+                <!-- SNS -->
+                <div class="snsWrap">
+                    <div class="youtubeIcon">
+                        <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                            <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                    </div>
+                    <div class="instaIcon">
+                        <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                            <img src="../images/Instagram_logo.png" alt="인스타그램"
+                        /></a>
+                    </div>
+                    <div class="blogIcon">
+                        <a href="https://blog.naver.com/711sns"target="_blank">
+                            <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                    </div>
+                    <div class="facebookIcon">
+                        <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                            <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 연락처 & copyright -->
+            <div class="footer_text">
+                <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+            </div>
+
+            <!-- 인증 -->
+            <div class="ismsp_wrap">
+                <div class="ismsp_logo">
+                    <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                </div>
+                <div class="ismsp_text">
+                    <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                    <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객의소리</title>
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/sub.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+        .cvms-container {
+            width: 980px;
+            margin: 0 auto;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        .cvms-section {
+            margin: 20px 0;
+            margin-bottom: 50px;
+        }
+        .cvms-heading {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .cvms-heading::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-55%);
+            width: 10px;
+            height: 20px;
+            background-color: orange;
+            border-radius: 40%;
+        }
+        .cvms-paragraph {
+            font-size: 17px;
+            color: #555;
+        }
+        .cvms-highlight {
+            color: #147350;
+        }
+        .cvms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 17px;
+        }
+        .cvms-table, .cvms-table th, .cvms-table td {
+            border: 1px solid #ddd;
+        }
+        .cvms-table th {
+            color: #147350;
+            font-weight: bold;
+            border-top: 3px solid #147350;
+            padding: 10px;
+            text-align: center;
+        }
+        .cvms-table td {
+            padding: 10px;
+            text-align: center;
+        }
+        .cvms-flex-container {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            
+        }
+
+        .cvms-flex-container h1 {
+            font-size: 30px;
+        }
+        .cvms-flex-container img {
+            margin-right: 20px;
+            width: 130px;
+            height: auto;
+        }
+        .cvms-consent-section {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .cvms-consent-section label {
+            margin: 0 10px;
+        }
+        .cvms-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .cvms-buttons button {
+            padding: 10px 30px;
+            margin: 0 10px;
+            font-weight: bold;
+            background-color: #147350;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .cvms-buttons button:hover {
+            background-color: #104f38;
+        }
+        .cvms-input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cvms-input-group label {
+            margin-right: 10px;
+        }
+        .cvms-input-group input[type="text"],
+        .cvms-input-group input[type="email"],
+        .cvms-input-group button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .cvms-input-group input[type="text"],
+        .cvms-input-group input[type="email"] {
+            flex: 1;
+            margin-right: 10px;
+            box-sizing: border-box;
+        }
+        .cvms-input-group button {
+            background-color: #147350;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .cvms-input-group button:hover {
+            background-color: #104f38;
+        }
+        .cvms-form-table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+            border-top: 3px solid #147350;
+        }
+        .cvms-form-table td,
+        .cvms-form-table th {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        .cvms-form-table td input[type="text"],
+        .cvms-form-table td input[type="email"],
+        .cvms-form-table td textarea,
+        .cvms-form-table td select,
+        .cvms-form-table td input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #cancelBtn {
+            background: #fff;
+            border: 1px solid #104f38;
+            color: #104f38;
+        }
+    </style>
+</head>
+<body>
+        <!-- header -->
+        <header id="header" class="header">
+            <div class="header_bottom">
+                <!-- logo -->
+                <div class="logo_wrap">
+                    <h1 class="logo">
+                        <a href="../index.html">
+                            <img src="../images/SevenElevenLogo.svg" alt="seveneleven" width="181px" height="33px">
+                        </a>
+                    </h1>
+                </div>
+            
+                <!-- gnb -->
+                <nav class="gnb">
+                <h2 class="hide">주요 메뉴</h2> 
+                <ul>
+                    <li class="menu01">
+                        <a href="../introduce/intro.html">세븐일레븐 소개</a>
+                        <ul>
+                            <li><a href="../introduce/intro.html">회사소개</a></li>
+                            <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                            <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                            <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                            <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                            <li><a href="../introduce/news.html">NEWS</a></li>
+                        </ul>
+                    </li>
+                
+                    <li class="menu02">
+                        <a href="../event/eventList.html">이벤트</a>
+                        <ul>
+                            <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                            <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                        </ul>
+                    </li>
+                
+                    <li class="menu03">
+                        <a href="../event/completeList.html">상품 / 서비스</a>
+                        <ul>
+                            <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                            <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                            <li><a href="../product/eventProduct.html">이달의 증정할인</a></li>
+                            <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                            <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                            <li><a href="../product/service.html">서비스 안내</a></li>
+                            <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                            <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                        </ul>
+                    </li>
+                
+                    <li class="menu04">
+                        <a href="../partner/partnerGuide.html">입점상담</a>
+                        <ul>
+                            <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                            <li><a href="https://www.7-eleven.co.kr/mp/main.asp">동반성장<img src="../images/arrow-up-right.png"alt="동반성장 링크가기"></a></li>
+                        </ul>
+                    </li>
+                
+                    <li class="menu05">
+                        <a href="../franchise/franchiseGuide.html">창업안내</a>
+                        <ul>
+                            <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                            <li><a href="../franchise/franchiseExplan.html">창업절차</a></li>
+                            <li><a href="../franchise/franchiseAdvice.html">창업설명회</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        
+                </nav>
+                <!-- map_search -->
+                <div class="map_search">
+                    <a href="../map_search.html">
+                    <img src="../images/pin.png" alt="매장찾기">
+                    </a>
+                </div>
+            </div>
+            <div class="nav_bg"></div>
+        
+            <!-- top menu -->
+            <div class="top_menu">
+            <h2 class="hide">유틸메뉴</h2>
+                <ul>
+                    <li><a href="../login.html">로그인</a></li>
+                    <li><a href="../join.html">회원가입</a></li>
+                </ul>
+            </div>
+            </header>
+            <script>
+                $(document).ready(function(){
+                    /* gnb_slideDown */
+                        $(".gnb>ul>li,.nav_bg").hover(function(){
+                            $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                        },function(){
+                            $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                        });
+        
+                    /* side_menu_fixed*/
+                    $(window).scroll(function(){
+                        let sT = $(window).scrollTop();
+                        
+                        if(sT > 400){
+                            $(".tab_button").addClass("tab_button_fixed");
+                            $(".tab_button_bg").addClass("tab_button_bg_fixed");
+                        } else{
+                            $(".tab_button").removeClass("tab_button_fixed");
+                            $(".tab_button_bg").removeClass("tab_button_bg_fixed");
+                        }
+                        });
+        
+                })
+            </script>
+
+<!-- main -->
+    <div class="cvms-container">
+        <section class="cvms-flex-container">
+            <img src="../images/icon_megaphone.png" alt="메가폰 아이콘">
+            <div>
+                <h1><span class="cvms-highlight">안녕하세요!</span> 세븐일레븐 '고객의 소리'입니다.</h1>
+                <p class="cvms-paragraph">문의/제안, 칭찬, 불만사항이 있으시면 글을 남겨 주세요. 확인 후 답변 드리겠습니다.</p>
+            </div>
+        </section>
+
+        <section class="cvms-section">
+            <h2 class="cvms-heading"><span class="cvms-highlight">[필수]</span> 개인정보 수집 및 이용 동의</h2>
+            <table class="cvms-table">
+                <tr>
+                    <th>목적</th>
+                    <th>항목</th>
+                    <th>보유기간</th>
+                </tr>
+                <tr>
+                    <td>이용자 식별 및 본인 여부 확인</td>
+                    <td>이름</td>
+                    <td>등록일로부터 3년</td>
+                </tr>
+                <tr>
+                    <td>고객 문의 및 민원 등에 대한 답변 연락</td>
+                    <td>연락처, 이메일, 상담내용</td>
+                    <td>등록일로부터 3년</td>
+                </tr>
+            </table>
+            <p class="cvms-paragraph">※ 위의 개인정보 수집 및 이용에 대한 동의를 거부할 권리가 있습니다.</p>
+            <p class="cvms-paragraph">※ 고객의 소리 서비스 제공을 위해 필요한 최소한의 개인정보이므로 동의를 해 주셔야 서비스를 이용하실 수 있습니다.</p>
+            <p class="cvms-paragraph">※ 수집된 개인정보를 이용하여 고객 문의 및 민원 등에 대한 답변을 위해 정보주체에게 연락을 드릴 수 있습니다.</p>
+            <div class="cvms-consent-section">
+                <p class="cvms-paragraph">개인정보 수집 및 이용 동의에 대한 항목을 확인하였으며, 위 정책에 동의합니다.
+                    <label><input type="radio" name="consent" value="yes"> 예</label>
+                    <label><input type="radio" name="consent" value="no"> 아니요</label>
+                </p>
+            </div>
+        </section>
+
+        <section class="cvms-section">
+            <h2 class="cvms-heading"><span class="cvms-highlight">[선택]</span> 개인정보 제3자 제공 동의</h2>
+            <table class="cvms-table">
+                <tr>
+                    <th>제공받는 자</th>
+                    <th>제공받는 자의 <br>개인정보 이용 및 목적</th>
+                    <th>제공하는 <br>개인정보 항목</th>
+                    <th>제공받는 자의 개인정보 보유 및 이용기간</th>
+                </tr>
+                <tr>
+                    <td>관련 점포 경영주 및 메이트, 제조사, 대행사 등 협력업체</td>
+                    <td>문의/민원 내용에 대한 응답 및 해결</td>
+                    <td>이름, 연락처, 이메일, 상담내용</td>
+                    <td>등록일로부터 3년</td>
+                </tr>
+            </table>
+            <p class="cvms-paragraph">※ 개인정보 제3자 제공 동의를 거부하시는 경우에도 고객의 소리 서비스는 이용하실 수 있습니다.</p>
+            <p class="cvms-paragraph">※ 단, 동의를 거부하시는 경우 경영주, 메이트, 제조사, 대행사 등 협력업체로부터 답변 연락 및 실질적인 민원처리를 받으실 수 없습니다.</p>
+            <div class="cvms-consent-section">
+                <p class="cvms-paragraph">개인정보 제3자 제공 동의에 대한 항목을 확인하였으며, 위 정책에 동의합니다.
+                    <label><input type="radio" name="thirdPartyConsent" value="yes"> 예</label>
+                    <label><input type="radio" name="thirdPartyConsent" value="no"> 아니요</label>
+                </p>
+            </div>
+        </section>
+<style>
+    .cvms-paragraph input[type="radio"]{
+        margin-top: -3px;
+    }
+</style>
+        <section class="cvms-section">
+            <h2 class="cvms-heading">본인 정보</h2>
+            <form id="customerForm">
+                <table class="cvms-form-table">
+                    <tr>
+                        <td><label for="name">이름</label></td>
+                        <td><input type="text" id="name" name="name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="contact">연락처</label></td>
+                        <td class="cvms-input-group" style="border: none;">
+                            <input type="text" id="contact" name="contact">
+                            <button type="button" id="authenticateBtn">본인인증</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">이메일</label></td>
+                        <td><input type="email" id="email" name="email"></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+
+        <section class="cvms-section">
+            <h2 class="cvms-heading">부가정보</h2>
+            <table class="cvms-form-table">
+                <tr>
+                    <td>점포</td>
+                    <td>
+                        <div class="cvms-input-group">
+                            <label><input type="radio" name="searchType" value="store"> 주소 또는 지점명 검색</label>
+                            <label><input type="radio" name="searchType" value="direct"> 직접입력</label>
+                        </div>
+                        <div class="cvms-input-group" id="storeSearchGroup">
+                            <input type="text" id="storeSearchInput" name="storeSearch">
+                            <button type="button" id="storeSearchBtn">점포검색</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+        </section>
+
+        <section class="cvms-section">
+            <h2 class="cvms-heading">내용 입력</h2>
+            <form id="contentForm">
+                <table class="cvms-form-table">
+                    <tr>
+                        <td><label for="title">제목</label></td>
+                        <td><input type="text" id="title" name="title"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="content">내용</label></td>
+                        <td><textarea id="content" name="content" rows="4"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td><label for="replyMethod">회신방법</label></td>
+                        <td>
+                            <select id="replyMethod" name="replyMethod">
+                                <option value="email">이메일</option>
+                                <option value="phone">전화</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="file">사진추가</label></td>
+                        <td><input type="file" id="file" name="file"></td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+
+        <div class="cvms-buttons">
+            <button type="submit" id="saveBtn">저장</button>
+            <button type="button" id="cancelBtn">취소</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 본인인증 버튼 클릭 시 동작
+            document.getElementById('authenticateBtn').addEventListener('click', function() {
+                var contact = document.getElementById('contact').value;
+                if (contact.trim() === '') {
+                    alert('연락처를 입력해주세요.');
+                    return;
+                }
+                alert('연락처 ' + contact + '로 본인인증을 시도합니다.');
+            });
+
+
+            // 저장 버튼 클릭 시 동작
+            document.getElementById('saveBtn').addEventListener('click', function() {
+                alert('저장이 완료되었습니다.');
+            });
+        });
+    </script>
+
+        <!-- footer -->
+        <footer id="footer" class="footer">
+            <div class="footer_wrap">
+                <div class="footer_top">
+                    <!-- 푸터 로고 -->
+                    <p class="footer_logo"><img src="../images/footer_logo.png" alt=""></p>
+    
+                    <!-- 패밀리 사이트 -->
+                    <ul class="familySite">
+                        <li class="famMenu">
+                        <div class="textWrap">
+                            <input type="checkbox"name=""id="familySite"/>
+                            <label for="familySite">
+                            <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                            <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                    <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                    <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                    <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                    <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                    <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                    <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                    <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                    <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                    <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                    <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                    <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                    <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                    <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                    <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                    <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                    <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                    <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                    <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                    <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                    <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                    <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                    <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                    <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                    <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                    <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                    <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                    <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                    <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                    <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                    <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                    <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                    <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                    <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                    <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                    <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                    <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                    <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                    <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                    <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                    <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                    <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                    <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                    <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                    <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                    <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                    <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                    <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                    <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                    <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                    <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                    <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                    <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                    <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                    <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                    <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                    <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                    <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                    <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                    <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                    <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                    <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                    <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                    <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                    <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                    <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                                </ul>
+                            </label>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+    
+    
+                <div class="footer_bottom">
+                    <!-- 약관 및 정책 -->
+                    <div class="footer_menu">
+                        <h3 class="hide">약관 및 정책</h3>
+                        <ul>
+                            <li><a href="#none">사이트맵</a></li>
+                            <li><a href="#none">개인정보처리방침</a></li>
+                            <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                            <li><a href="#none">윤리핫라인</a></li>
+                            <li><a href="#none">불공정거래신고</a></li>
+                            <li><a href="#none">안전보건핫라인</a></li>
+                        </ul>
+                    </div>
+    
+                    <!-- SNS -->
+                    <div class="snsWrap">
+                        <div class="youtubeIcon">
+                            <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                                <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                        </div>
+                        <div class="instaIcon">
+                            <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                                <img src="../images/Instagram_logo.png" alt="인스타그램"
+                            /></a>
+                        </div>
+                        <div class="blogIcon">
+                            <a href="https://blog.naver.com/711sns"target="_blank">
+                                <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                        </div>
+                        <div class="facebookIcon">
+                            <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                                <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                        </div>
+                    </div>
+                </div>
+    
+            
+                <!-- 연락처 & copyright -->
+                <div class="footer_text">
+                    <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                    <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                    <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                    <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+                </div>
+    
+                <!-- 인증 -->
+                <div class="ismsp_wrap">
+                    <div class="ismsp_logo">
+                        <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                    </div>
+                    <div class="ismsp_text">
+                        <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                        <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                    </div>
+                </div>
+    
+            </div>
+        </footer>
+</body>
+</html>
