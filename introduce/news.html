@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="http://www.7-eleven.co.kr/"/>
+	<meta name="keywords" content="7-ELEVEN, 세븐일레븐"/>
+	<title>NEWS | 세븐일레븐 소개 | 7-ELEVEN | 세븐일레븐</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+
+        /* main */
+
+        /* 서브 메뉴 타이틀 */
+
+        .title_inner{text-align: center; margin-top: 131px; color: #333333; }
+
+        .title_page{font-size:45px; font-weight: bold;}
+
+        .sub_copy{font-size: 16px;height: 55px;}
+
+        /* 탑메뉴 메뉴 */
+
+        .tab_button{margin: 0 auto; width: 1240px; position: relative;}
+
+        .tab_button_bg{position: absolute; width:100%; height:0px; z-index: 40; border-bottom: 1px solid #AAA;}
+
+        .tab_button ul{display: flex; font-size: 18px; color: #555; justify-content: center;}
+
+        .tab_button ul li{width: 177px;height: 65px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;position: relative;}
+
+            /* 탑메뉴 장식 | -> 1개 추가할때마다 left값 + 177px 해서 쓰시면 됩니다 */
+
+        .tab_button ul li:first-child::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+
+            /* 탑메뉴 (고정) */
+
+        .tab_button_fixed{position: fixed;z-index: 40;left: 50%;top: 0;transform: translateX(-50%);}
+
+        .tab_button_bg_fixed{position: fixed;height: 65px; background: #fff; z-index: 39;top: 0;}
+
+            /* 비활성화 탑메뉴 */
+
+        .tab_cont > div  {width: 100%; display: none;}
+        
+            /* 활성화된 탑메뉴 */
+
+        li.open{color: #147350;font-weight: bold;}
+
+        .tab_cont > div.open {display: block;}
+
+        /* 메인 컨텐츠 중앙 정렬 1240px */
+
+        .submenu, .recruit_search{margin: 0 auto; width: 1240px;}
+
+        /* 텍스트 컨텐츠 -> 불필요시 삭제 */
+
+        .sub_icon{display: flex; align-items: center;}
+
+        .submenu_top{display: flex; align-items: center;margin-top: 80px}
+
+        .submenu_title{padding-left: 26px; font-size: 30px;}
+
+            /*텍스트 컨텐츠_내용*/
+
+        .submenu_text{margin: 5px 0 0 36px; font-size: 17px; color: #555;}
+
+        .submenu_text span{color: #147350; font-weight: bold;}/* 텍스트 컨텐츠_글씨 강조 */
+
+        /* 검색박스 */
+
+        .search_box label{display: none;} /*이거 오버플로우 적용이 안되서 일단 안보이게 해놨어요 ^_ㅜ*/
+
+        .search_box{display: flex; justify-content: center; margin-top: 60px;}
+
+        #searchType, #searchText, .search_btn{border: none;}
+
+        .search_form fieldset{display: flex;}
+
+        .search_form{box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.12); width: 700px;height: 55px; display: flex; align-items: center;justify-content: center; border-radius: 35px; border: 1px solid #fff;}
+
+            /* 검색박스_select,text box*/
+
+        #searchType{padding: 0 10px; font-size: 15px}
+
+        #searchText{width: 510px; font-size: 17px;}
+
+        .search_line{display: flex;align-items: center; padding: 0 10px;}
+
+            /* 검색박스_버튼 */
+
+        .search_btn{border-radius: 35px; width: 120px; background-color: #147350; color: #fff; display: flex; justify-content: center; align-items: center; font-size: 19px; margin-left: 20px}
+        
+        .search_btn:hover {transform: scale(98%);}
+    
+            /* 검색박스_포커스 */
+
+        #searchText:focus{outline: none;}
+
+        .search_form:focus-within {border: 1px solid #147350;}
+
+
+        /* 탑메뉴 01 사회공헌 */
+
+        
+        .allList{text-align: center; margin: 50px auto 0px; width: 1080px;}
+
+            /* 버튼 */
+        .allListBtn ul{display: flex; justify-content: center; gap: 20px; margin-bottom: 40px;}
+
+        .allListBtn li{border: 1px solid #aaa;border-radius: 35px; width: 150px; height: 35px; display: flex; justify-content: center; align-items: center; font-size: 15px; color: #aaa; cursor: pointer;} 
+
+        .allListBtn li:hover{color: #FF6C00; transform: scale(98%);}
+
+        .allListBtn li.on{color: #147350; border: 1px solid #147350; font-weight: bold;}
+
+        .tapmenu02 .allListBtn li{width: 120px;}
+
+            /* 컨텐츠 */
+        .allListCont_wrap01{display: flex; gap: 32px; margin-bottom: 40px;}
+
+        .allListCont_wrap01>div{overflow: hidden; width: 390px; height: 495px; border-radius: 35px; border: 1px solid #eee; position: relative;}
+
+        .allListCont_wrap01>div:hover{box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.20)}
+
+        .allListCont_img{height: 250px; background: #555; overflow: hidden;}
+
+        .allListCont img{object-fit: cover;}
+
+        .allListCont_text{text-align: left; position: relative;}
+
+        .allListCont_text span{font-size: 22px; width: 325px;padding: 10px 25px 0px; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; display: block ; display: -webkit-box; /* 표시 방식 - 유연하게 늘어나는 박스 */ -webkit-box-orient: vertical;/* 박스 늘릴 방향 */-webkit-line-clamp: 2;/* 몇 줄까지 표시할지 */}
+
+        .allListCont_text p:nth-child(2){font-size: 15px; color: #333; padding: 10px 25px 0px; box-sizing: border-box; overflow: hidden; text-overflow: ellipsis; display: block ; display: -webkit-box; /* 표시 방식 - 유연하게 늘어나는 박스 */ -webkit-box-orient: vertical;/* 박스 늘릴 방향 */-webkit-line-clamp: 3;/* 몇 줄까지 표시할지 */}
+
+        .allListCont_text p:nth-child(3){font-size: 15px; color: #555; padding: 40px 30px 10px;}
+
+        .allListCont_text p:nth-child(4){font-size: 15px; color: #147350; position: absolute; bottom: 10px; right: 30px;}
+
+        .allListCont_wrap02{display: flex; gap: 32px; margin-bottom: 40px;}
+
+        .allListCont_wrap02>div{overflow: hidden; width: 390px; height: 515px; border-radius: 35px; border: 1px solid #eee;}
+
+        .allListCont_wrap02>div:hover{box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.20)}
+
+        .allListCont_wrap03{display: flex; gap: 32px; margin-bottom: 40px;}
+
+        .allListCont_wrap03>div{overflow: hidden; width: 390px; height: 515px; border-radius: 35px; border: 1px solid #eee;}
+
+        .allListCont_wrap03>div:hover{box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.20)}
+
+
+        .allList_TableBtn{width: 300px; height: 65px; border-radius: 35px; border: 1px solid #555; background-color: #fff; font-size: 20px; color: #333333;margin: 40px 0px 150px;}
+
+        .allList_TableBtn:hover{background-color: #147350;color: #fff; border: none;}
+
+        </style>
+        <script>
+            $(document).ready(function(){
+                /* gnb_slideDown */
+                    $(".gnb>ul>li, .nav_bg").hover(function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                    },function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                    });
+
+                /* side_menu_fixed*/
+                $(window).scroll(function(){
+                    let sT = $(window).scrollTop();
+                    
+                    if(sT > 400){
+                        $(".tab_button").addClass("tab_button_fixed");
+                        $(".tab_button_bg").addClass("tab_button_bg_fixed");
+                    } else{
+                        $(".tab_button").removeClass("tab_button_fixed");
+                        $(".tab_button_bg").removeClass("tab_button_bg_fixed");
+                    }
+                });
+
+                /* 탑메뉴 */
+                    $(".tab_button li").click(function () {
+                    var idx = $(this).index();
+                    $(this).addClass("open").siblings().removeClass("open");
+
+                    $(".tab_cont>div")
+                    .eq(idx).addClass("open").siblings(".tab_cont>div").removeClass("open");
+                    
+
+                });
+            })
+        </script>
+</head>
+<body>
+
+    <!-- header -->
+    <header id="header" class="header">
+    <div class="header_bottom">
+        <!-- logo -->
+        <div class="logo_wrap">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/SevenElevenLogo.svg" alt="seveneleven" width="181px" height="33px">
+                </a>
+            </h1>
+        </div>
+    
+    <!--gnb-->
+    <nav class="gnb">
+        <h2 class="hide">주요 메뉴</h2> 
+        <ul>
+            <li class="menu01">
+                <a href="../introduce/intro.html">세븐일레븐 소개</a>
+                <ul>
+                    <li><a href="../introduce/intro.html">회사소개</a></li>
+                    <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                    <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                    <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                    <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                    <li><a href="../introduce/news.html">NEWS</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu02">
+                <a href="../event/eventList.html">이벤트</a>
+                <ul>
+                    <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                    <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu03">
+                <a href="../product/FreshfoodList.html">상품 / 서비스</a>
+                <ul>
+                    <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                    <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                    <li><a href="../product/presentList.html">이달의 증정할인</a></li>
+                    <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                    <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                    <li><a href="../product/service.html">서비스 안내</a></li>
+                    <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                    <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu04">
+                <a href="../partner/partnerGuide.html">입점상담</a>
+                <ul>
+                    <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                    <li><a href="https://www.7-eleven.co.kr/mp/main.asp">동반성장<img src="../images/arrow-up-right.png"alt="동반성장 링크가기"></a></li>
+                </ul>
+            </li>
+        
+            <li class="menu05">
+                <a href="../franchise/franchiseGuide.html">창업안내</a>
+                <ul>
+                    <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                    <li><a href="../franchise/franchiseExplan.html">창업절차</a></li>
+                    <li><a href="../franchise/franchiseAdvice.html">창업설명회</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+        <!-- map_search -->
+        <div class="map_search">
+            <a href="../map_search.html">
+            <img src="../images/pin.png" alt="매장찾기">
+            </a>
+        </div>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!-- top menu -->
+    <div class="top_menu">
+    <h2 class="hide">유틸메뉴</h2>
+        <ul>
+            <li><a href="../login.html">로그인</a></li>
+            <li><a href="../join.html">회원가입</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <!-- main -->
+    <main>
+    <div id="container"> 
+        <!-- 서브 메뉴 타이틀 -->
+        <div class="title_inner">
+            <h3 class="title_page">NEWS</h3>
+            <p class="sub_copy">세븐일레븐의 이야기는 늘 가까운 곳에서 여러분을 기다리고 있습니다.</p>
+        </div>
+
+        <!-- 탑메뉴 버튼-->
+            <div class="tab_button">
+                <ul>
+                    <li class="open"><a href="#">사회공헌소식</a></li>
+                    <li><a href="#">7-STORY 이야기</a></li>
+                </ul>
+            </div>
+            <div class="tab_button_bg"></div>
+    
+        <!-- 탑메뉴 내용 -->
+            <div class="tab_cont">
+                <!-- 탑메뉴01 -->
+                <div class="tapmenu01 open">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">사회공헌소식</p>
+                        </div>
+                        <p class="submenu_text">우리사회에 나눔문화가 확산되길 바라는 <span>세븐일레븐의 이웃사랑 실천소식</span>을 전합니다.</p>
+                    </section>
+
+                    <!-- 사회공헌소식 -->
+
+                    <!-- 검색 -->
+                    <section class="recruit_search">
+                        <div class="search_box">
+                            <form action="" class="search_form" name="" method="">
+                                <fieldset>
+                                    <legend class="hide">키워드 검색</legend>
+                                    <label for="search" class="hide">입력</label>
+                                    <select id= "searchType" name="searchType" title="검색 조건을 선택해 주세요">
+                                        <option value="All" >제목 + 내용</option>
+                                        <option value="title" >제목</option>
+                                        <option value="conts" >내용</option>
+                                    </select>
+                                    <div class="search_line"><img src="../images/search_line.svg" alt="라인"></div>
+                                    <input type="text" id="searchText" name="searchText" value="" placeholder="검색어를 입력해주세요." title=""/>
+                                </fieldset>
+                            </form>
+                            <button class="search_btn">검색</button>
+                        </div>
+                    </section>
+
+                    <!-- 사회공헌소식 뉴스 -->
+                    <section class="allList">
+                        <div class="allListBtn">
+                            <ul>
+                                <li class="on"><a href="#">전체</a></li>
+                                <li><a href="#">임직원 자율봉사</a></li>
+                                <li><a href="#">단체연계활동</a></li>
+                                <li><a href="#">프로젝트 프로그램</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="allListCont_wrap01">
+                            <div class="allListCont01">
+                                <a href="#">
+                                    <img src="../images/news_1_01.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 창립기념일맞이 쪽방촌 봉사활동 진행</span>
+                                        <p>세븐일레븐은 창립기념일을 맞이해 경영주,임직원과 함께 쪽방촌 봉사활동을 진행했습니다</p>
+                                        <p>2024-06-07</p>
+                                        <p>#프로젝트 프로그램</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont02">
+                                <a href="#">
+                                    <img src="../images/news_1_02.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 한부모 가정의 날 맞이 모두하나대축제 참여</span>
+                                        <p>세븐일레븐은 5월 11일 `한부모가족의 날`을 맞아 서울시한부모가족지원센터가 주관하는 `모두하나대축제`에 참석했습니다. 당사의 한부모 지원사업을 홍보하고 킨더조이세트, 플리퍼즈,..
+                                        </p>
+                                        <p>2024-06-07</p>
+                                        <p>#임직원 자율봉사</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont03">
+                                <a href="#">
+                                    <img src="../images/news_1_03.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 한국사회복지협의회와 ESG 업무협약 체결</span>
+                                        <p>세븐일레븐은 지난 5월 2일 한국사회복지협의회 전국푸드뱅크와 지속가능한 사회공헌 활동을 위한 ESG 업무협약을 체결했습니다.
+                                        </p>
+                                        <p>2024-06-07</p>
+                                        <p>#임직원 자율봉사</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="allListCont_wrap02">
+                            <div class="allListCont04">
+                                <a href="#">
+                                    <img src="../images/news_1_04.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 친환경 동전모금액 전달식 진행행</span>
+                                        <p>세븐일레븐은 지난 1년간 전국 점포에서 모금한 친환경 동전모금액 약 7,200만원을 환경재단에 전달했습니다.</p>
+                                        <p>2024-06-07</p>
+                                        <p>#임직원 자율봉</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont05">
+                                <a href="#">
+                                    <img src="../images/news_1_05.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 여성가족부 협업 위기청소년 지원</span>
+                                        <p>세븐일레븐이 여성가족부와 함께 청소년 고립 및 은둔 예방을 위한 캠페인을 진행합니다.                                        </p>
+                                        <p>2024-06-07</p>
+                                        <p>#프로젝트 프로그램</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont06">
+                                <a href="#">
+                                    <img src="../images/news_1_06.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 가을맞이 청계천환경정화활동 동참</span>
+                                        <p>세븐일레븐은 창립기념일을 맞이해 경영주,임직원과 함께 쪽방촌 봉사활동을 진행했습니다</p>
+                                        <p>2023-10-19</p>
+                                        <p>#임직원 자율봉사</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <button class="allList_TableBtn">더보기 <span> +</span></button>
+                    </section>
+
+                </div>
+
+                <!-- 탑메뉴02 -->
+                <div class="tapmenu02">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">7-STORY 이야기</p>
+                        </div>
+                        <p class="submenu_text"><span>7-STORY세븐일레븐의 다양한 이야기</span>가 펼쳐지는 공간에 함께하세요!</p>
+                    </section>
+
+                    <!-- 사회공헌소식 -->
+
+                    <!-- 검색 -->
+                    <section class="recruit_search">
+                        <div class="search_box">
+                            <form action="" class="search_form" name="" method="">
+                                <fieldset>
+                                    <legend class="hide">키워드 검색</legend>
+                                    <label for="search" class="hide">입력</label>
+                                    <select id= "searchType" name="searchType" title="검색 조건을 선택해 주세요">
+                                        <option value="All" >제목 + 내용</option>
+                                        <option value="title" >제목</option>
+                                        <option value="conts" >내용</option>
+                                    </select>
+                                    <div class="search_line"><img src="../images/search_line.svg" alt="라인"></div>
+                                    <input type="text" id="searchText" name="searchText" value="" placeholder="검색어를 입력해주세요." title=""/>
+                                </fieldset>
+                            </form>
+                            <button class="search_btn">검색</button>
+                        </div>
+                    </section>
+
+                    <!-- SNS 뉴스 -->
+                    <section class="allList">
+                        <div class="allListBtn">
+                            <ul>
+                                <li class="on"><a href="#">전체</a></li>
+                                <li><a href="#">YOUTUBE</a></li>
+                                <li><a href="#">FACEBOOK</a></li>
+                                <li><a href="#">TWITTER</a></li>
+                                <li><a href="#">INSTAGRAM</a></li>
+                                <li><a href="#">BLOG</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="allListCont_wrap01">
+                            <div class="allListCont01">
+                                <a href="#">
+                                    <img src="../images/news_1_01.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 창립기념일맞이 쪽방촌 봉사활동 진행</span>
+                                        <p>세븐일레븐은 창립기념일을 맞이해 경영주,임직원과 함께 쪽방촌 봉사활동을 진행했습니다</p>
+                                        <p>2024-06-07</p>
+                                        <p>#프로젝트 프로그램</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont02">
+                                <a href="#">
+                                    <img src="../images/news_1_02.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 한부모 가정의 날 맞이 모두하나대축제 참여</span>
+                                        <p>세븐일레븐은 5월 11일 `한부모가족의 날`을 맞아 서울시한부모가족지원센터가 주관하는 `모두하나대축제`에 참석했습니다. 당사의 한부모 지원사업을 홍보하고 킨더조이세트, 플리퍼즈,..
+                                        </p>
+                                        <p>2024-06-07</p>
+                                        <p>#임직원 자율봉사</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont03">
+                                <a href="#">
+                                    <img src="../images/news_1_03.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 한국사회복지협의회와 ESG 업무협약 체결</span>
+                                        <p>세븐일레븐은 지난 5월 2일 한국사회복지협의회 전국푸드뱅크와 지속가능한 사회공헌 활동을 위한 ESG 업무협약을 체결했습니다.
+                                        </p>
+                                        <p>2024-06-07</p>
+                                        <p>#임직원 자율봉사</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="allListCont_wrap02">
+                            <div class="allListCont04">
+                                <a href="#">
+                                    <img src="../images/news_1_04.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 친환경 동전모금액 전달식 진행행</span>
+                                        <p>세븐일레븐은 지난 1년간 전국 점포에서 모금한 친환경 동전모금액 약 7,200만원을 환경재단에 전달했습니다.</p>
+                                        <p>2024-06-07</p>
+                                        <p>#임직원 자율봉</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont05">
+                                <a href="#">
+                                    <img src="../images/news_1_05.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 여성가족부 협업 위기청소년 지원</span>
+                                        <p>세븐일레븐이 여성가족부와 함께 청소년 고립 및 은둔 예방을 위한 캠페인을 진행합니다.                                        </p>
+                                        <p>2024-06-07</p>
+                                        <p>#프로젝트 프로그램</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="allListCont06">
+                                <a href="#">
+                                    <img src="../images/news_1_06.png" alt="" width="390" height="250">
+                                    <div class="allListCont_text">
+                                        <span>세븐일레븐 가을맞이 청계천환경정화활동 동참</span>
+                                        <p>세븐일레븐은 창립기념일을 맞이해 경영주,임직원과 함께 쪽방촌 봉사활동을 진행했습니다</p>
+                                        <p>2023-10-19</p>
+                                        <p>#임직원 자율봉사</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <button class="allList_TableBtn">더보기 <span> +</span></button>
+                    </section>
+                </div>
+                
+
+                <!-- 탑메뉴03 -->
+                <div class="tapmenu03">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">채용문의</p>
+                        </div>
+                        <p class="submenu_text">대학생 여러분의 젊음과 열정에 세븐일레븐이 함께 하겠습니다.</p>
+                    </section>
+                    
+                    <!-- 검색 -->
+                    <section class="recruit_search">
+                        <div class="search_box">
+                            <form action="" class="search_form" name="" method="">
+                                <fieldset>
+                                    <legend class="hide">키워드 검색</legend>
+                                    <label for="search" class="hide">입력</label>
+                                    <select id= "searchType" name="searchType" title="검색 조건을 선택해 주세요">
+                                        <option value="All" >제목 + 내용</option>
+                                        <option value="title" >제목</option>
+                                        <option value="conts" >내용</option>
+                                    </select>
+                                    <div class="search_line"><img src="../images/search_line.svg" alt="라인"></div>
+                                    <input type="text" id="searchText" name="searchText" value="" placeholder="검색어를 입력해주세요." title=""/>
+                                </fieldset>
+                            </form>
+                            <button class="search_btn">검색</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </div>
+    </main>
+    
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <!-- 푸터 로고 -->
+                <p class="footer_logo"><img src="images/footer_logo.png" alt=""></p>
+
+                <!-- 패밀리 사이트 -->
+                <ul class="familySite">
+                    <li class="famMenu">
+                    <div class="textWrap">
+                        <input type="checkbox"name=""id="familySite"/>
+                        <label for="familySite">
+                        <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                        <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="footer_bottom">
+                <!-- 약관 및 정책 -->
+                <div class="footer_menu">
+                    <h3 class="hide">약관 및 정책</h3>
+                    <ul>
+                        <li><a href="#none">사이트맵</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="#none">윤리핫라인</a></li>
+                        <li><a href="#none">불공정거래신고</a></li>
+                        <li><a href="#none">안전보건핫라인</a></li>
+                    </ul>
+                </div>
+
+                <!-- SNS -->
+                <div class="snsWrap">
+                    <div class="youtubeIcon">
+                        <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                            <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                    </div>
+                    <div class="instaIcon">
+                        <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                            <img src="../images/Instagram_logo.png" alt="인스타그램"
+                        /></a>
+                    </div>
+                    <div class="blogIcon">
+                        <a href="https://blog.naver.com/711sns"target="_blank">
+                            <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                    </div>
+                    <div class="facebookIcon">
+                        <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                            <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 연락처 & copyright -->
+            <div class="footer_text">
+                <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+            </div>
+
+            <!-- 인증 -->
+            <div class="ismsp_wrap">
+                <div class="ismsp_logo">
+                    <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                </div>
+                <div class="ismsp_text">
+                    <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                    <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

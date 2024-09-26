@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="http://www.7-eleven.co.kr/"/>
+	<meta name="keywords" content="7-ELEVEN, 세븐일레븐"/>
+    <title>스마트픽</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery.gallery.js"></script>
+    <style>
+        #smartpick_container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .smartpick-text_image_section_wrap {
+            margin-bottom: 50px;
+        }
+
+        .smartpick-text_image_section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 30px; /* 각 섹션 사이의 마진 조정 */
+            gap: 50px;
+        }
+
+        .smartpick-text_image_section img {
+            max-width: 100%;
+        }
+
+        .smartpick-text_image_section div {
+            text-align: left;
+        }
+
+        .smartpick_text2 {
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 30px; /* 각 섹션 사이의 마진 조정 */
+        }
+
+        .smartpick-text_image_section_wrap h4 {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            position: relative;
+            padding-left: 20px; /* 동그란 마커의 왼쪽 간격 설정 */
+            color: #333;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%; /* 세로 중앙 정렬을 위한 설정 */
+            transform: translateY(-55%);
+            width: 10px; /* 타원 모양의 너비 설정 */
+            height: 20px; /* 타원 모양의 높이 설정 */
+            background-color: orange; /* 타원 모양의 배경색 설정 */
+            border-radius: 40%; /* 원형으로 모양을 만듭니다. */
+        }
+
+
+        #smartpick_container p {
+            font-size: 16px;
+            line-height: 0.5;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #555;
+        }
+
+        #smartpick_container section {
+            margin-bottom: 130px;
+        }
+
+        .smartpick-text_image_section_wrap span {
+            color: red;
+            font-size: 30px;       
+        }
+
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header id="header" class="header">
+        <div class="header_bottom">
+            <!-- logo -->
+            <div class="logo_wrap">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="../images/SevenElevenLogo.svg" alt="seveneleven" width="181px" height="33px">
+                    </a>
+                </h1>
+            </div>
+        
+            <!-- gnb -->
+            <nav class="gnb">
+            <h2 class="hide">주요 메뉴</h2> 
+            <ul>
+                <li class="menu01">
+                    <a href="../product/intro.html">세븐일레븐 소개</a>
+                    <ul>
+                        <li><a href="../introduce/intro.html">회사소개</a></li>
+                        <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                        <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                        <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                        <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                        <li><a href="../introduce/news.html">NEWS</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu02">
+                    <a href="../event/eventList.html">이벤트</a>
+                    <ul>
+                        <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                        <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu03">
+                    <a href="../event/completeList.html">상품 / 서비스</a>
+                    <ul>
+                        <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                        <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                        <li><a href="../product/presentList.html">이달의 증정할인</a></li>
+                        <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                        <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                        <li><a href="../product/service.html">서비스 안내</a></li>
+                        <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                        <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu04">
+                    <a href="../partner/partnerGuide.html">입점상담</a>
+                    <ul>
+                        <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                        <li><a href="https://www.7-eleven.co.kr/mp/main.asp">동반성장<img src="../images/arrow-up-right.png"alt="동반성장 링크가기"></a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu05">
+                    <a href="../franchise/franchiseGuide.html">창업안내</a>
+                    <ul>
+                        <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                        <li><a href="../franchise/franchiseExplan.html">창업절차</a></li>
+                        <li><a href="../franchise/franchiseAdvice.html">창업설명회</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+            </nav>
+            <!-- map_search -->
+            <div class="map_search">
+                <a href="../map_search.html">
+                <img src="../images/pin.png" alt="매장찾기">
+                </a>
+            </div>
+        </div>
+        <div class="nav_bg"></div>
+    
+        <!-- top menu -->
+        <div class="top_menu">
+        <h2 class="hide">유틸메뉴</h2>
+            <ul>
+                <li><a href="../login.html">로그인</a></li>
+                <li><a href="../join.html">회원가입</a></li>
+            </ul>
+        </div>
+        </header>
+        <script>
+            $(document).ready(function(){
+                /* gnb_slideDown */
+                    $(".gnb>ul>li").hover(function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                    },function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                    });
+    
+                /* side_menu_fixed*/
+                $(window).scroll(function(){
+                    let sT = $(window).scrollTop();
+                    
+                    if(sT > 400){
+                        $(".tab_button").addClass("tab_button_fixed");
+                        $(".tab_button_bg").addClass("tab_button_bg_fixed");
+                    } else{
+                        $(".tab_button").removeClass("tab_button_fixed");
+                        $(".tab_button_bg").removeClass("tab_button_bg_fixed");
+                    }
+                    });
+    
+            })
+        </script>
+
+
+<div class="title_inner">
+    <h3 class="title_page">스마트픽</h3>
+    <p class="sub_copy">24시간 언제나 원하는 때에 안심하고 찾을 수 있는 세븐일레븐 픽업을 소개합니다.</p>
+</div>
+
+<div class="tab_button_bg"></div>
+
+
+<div id="smartpick_container">
+    <div class="smartpick-text_image_section_wrap">
+        <section class="smartpick-text_image_section">
+            <div>
+                <h4><span>스마트픽</span>이란</h4>
+                <p>롯데닷컴, 엘롯데, 롯데아이몰, 하이마트 등 온라인몰에서 주문하여</p> 
+                <p>고객이 선택한 세븐일레븐 점포에서 24시간 원하는 시간에 상품을 수령</p>
+                <p>또는 반품 할 수 있는 서비스 입니다.</p> 
+            </div>
+            <img src="images/smartpick_01.PNG" alt="스마트픽 이미지">
+        </section>
+
+        <section class="smartpick-text_image_section">
+            <div>
+                <h4><span>24시간</span> 픽업</h4>
+                <p>가까운 세븐일레븐에서</p>
+                <p>안전하게 택배 수령 하세요</p>
+            </div>
+            <img src="images/smartpick_02.PNG" alt="24시간 픽업 이미지">
+        </section>
+
+        <section class="smartpick_text2">
+            <h4><span>스마트 픽</span> 이럴 때 이용하시면 편리합니다</h4>
+            <img src="images/smartpick_03.PNG" alt="스마트픽 이용 시 유의사항 이미지">
+        </section>
+    </div>
+
+
+
+    <section class="smartpick_text2">
+        <h2>연계온라인 쇼핑몰</h2>
+        <p>픽업 : 롯데닷컴, 엘롯데, 롯데홈쇼핑, 하이마트, 유니클로</p>
+        <p>반품 : 롯데닷컴, 엘롯데, 롯데홈쇼핑, 유니클로</p>
+        <div class="left-aligned-images">
+            <a href="https://www.lotteimall.com/main/viewMain.lotte#disp_no=5223317"><img src="images/smartpick_04.jpg" alt="연계 온라인 쇼핑몰"></a>
+            <a href="https://www.lotteon.com/p/display/main/lotteon"><img src="images/smartpick_05.jpg" alt="연계 온라인 쇼핑몰"></a>
+            <a href="https://www.lotteon.com/p/display/main/ellotte?mall_no=2&ch_no=100195&ch_dtl_no=1000617"><img src="images/smartpick_06.jpg" alt="연계 온라인 쇼핑몰"></a>
+            <a href="https://www.e-himart.co.kr/app/display/showDisplayShop?originReferrer=himartindex"><img src="images/smartpick_07.jpg" alt="연계 온라인 쇼핑몰"></a>
+            <a href="https://www.uniqlo.com/kr/ko/"><img src="images/smartpick_08.jpg" alt="연계 온라인 쇼핑몰"></a>
+        </div>
+    </section>
+    
+    <section class="smartpick_text2">
+        <h2>스마트 픽 이용방법</h2>
+        <div class="left-aligned-images">
+            <img src="images/smartpick_09.PNG" alt="스마트픽">
+        </div>
+    </section>
+
+    
+</div>
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <!-- 푸터 로고 -->
+                <p class="footer_logo"><img src="../images/footer_logo.png" alt=""></p>
+
+                <!-- 패밀리 사이트 -->
+                <ul class="familySite">
+                    <li class="famMenu">
+                    <div class="textWrap">
+                        <input type="checkbox"name=""id="familySite"/>
+                        <label for="familySite">
+                        <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                        <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="footer_bottom">
+                <!-- 약관 및 정책 -->
+                <div class="footer_menu">
+                    <h3 class="hide">약관 및 정책</h3>
+                    <ul>
+                        <li><a href="#none">사이트맵</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="#none">윤리핫라인</a></li>
+                        <li><a href="#none">불공정거래신고</a></li>
+                        <li><a href="#none">안전보건핫라인</a></li>
+                    </ul>
+                </div>
+
+                <!-- SNS -->
+                <div class="snsWrap">
+                    <div class="youtubeIcon">
+                        <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                            <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                    </div>
+                    <div class="instaIcon">
+                        <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                            <img src="../images/Instagram_logo.png" alt="인스타그램"
+                        /></a>
+                    </div>
+                    <div class="blogIcon">
+                        <a href="https://blog.naver.com/711sns"target="_blank">
+                            <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                    </div>
+                    <div class="facebookIcon">
+                        <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                            <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 연락처 & copyright -->
+            <div class="footer_text">
+                <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+            </div>
+
+            <!-- 인증 -->
+            <div class="ismsp_wrap">
+                <div class="ismsp_logo">
+                    <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                </div>
+                <div class="ismsp_text">
+                    <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                    <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    
+    
+
+</body>
+</html>

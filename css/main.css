@@ -1,0 +1,621 @@
+/* main 이미지 */
+.main-carousel-container {
+  height: 450px; /* 전체 화면 높이로 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.main-carousel {
+  width: 1100px; /* 고정 너비 설정 */
+  overflow: hidden;
+  position: relative;
+  background-color: white; /* carousel 배경색 설정 */
+  border-radius: 10px; /* carousel 둥근 테두리 설정 */
+}
+.main-carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 450px; /* carousel 높이 설정 */
+}
+.main-carousel-item {
+  flex: 0 0 100%;
+  text-align: center; /* 이미지 중앙 정렬 */
+}
+.main-carousel-item img {
+  width: 80%; /* 이미지 너비 100%로 설정 */
+  height: 100%; /* 이미지 높이 100%로 설정 */
+  object-fit: cover; /* 이미지 비율 유지하며 조정 */
+  border-radius: 20px; /* 둥근 테두리 추가 */
+}
+.main-carousel-controls {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+.main-carousel-control {
+  cursor: pointer;
+  position: absolute;
+  width: 40px; /* 화살표 가로 크기 */
+  height: 40px; /* 화살표 세로 크기 */
+  border-radius: 50%; /* 원형 모양으로 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* 화살표 색상 */
+  font-size: 1.5em; /* 화살표 크기 */
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease; /* 호버 효과 */
+}
+
+.main-carousel-control.prev {
+  left: 10px; /* 왼쪽에 위치 */
+  transform: rotate(180deg); /* 180도 회전 */
+}
+
+.main-carousel-control.next {
+  right: 10px; /* 오른쪽에 위치 */
+}
+
+
+
+/* PB상품 */
+.pb-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  margin: 20px auto;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.pb-carousel-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.pb-carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.pb-carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: calc(1000px + 20px);
+}
+
+.pb-product-item {
+  flex: 0 0 calc(100% / 5 - 20px);
+  max-width: calc(100% / 5 - 20px);
+  height: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #fff;
+  margin: 30px 10px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.pb-product-item:hover {
+  border-color: #147350;
+  transform: scale(1.02);
+}
+
+.pb-product-item img {
+  max-width: 100%;
+  height: 130px;
+}
+
+.pb-product-info {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.pb-product-info span {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.pb-prev-button, .pb-next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.pb-prev-button {
+  left: -50px;
+  transform: translateY(-50%) scaleX(-1); /* 이미지 좌우 반전 및 수직 정렬 */
+}
+
+.pb-next-button {
+  right: -50px;
+}
+
+.pb-prev-button img, .pb-next-button img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5; /* 화살표 이미지를 연하게 */
+  transition: opacity 0.3s ease; /* transition을 추가하여 자연스럽게 변하게 */
+}
+
+.pb-prev-button img:hover, .pb-next-button img:hover {
+  opacity: 1; 
+}
+
+.pb-more-button {
+  display: inline-block;
+  background-color: #fff;
+  color: #42a116;
+  padding: 5px 50px;
+  border: 1px solid #42a116;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pb-more-button:hover {
+  background-color: #42a116;
+  color: #fff;
+}
+
+.pb-product-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+
+
+
+  /* 신상품 */
+  .np-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    margin: 20px auto;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .np-carousel-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .np-carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .np-carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: calc(1000px + 20px); 
+  }
+
+  .np-product-item {
+    flex: 0 0 calc(100% / 5 - 20px);
+    max-width: calc(100% / 5 - 20px);
+    height: 250px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+    margin: 30px 10px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .np-product-item:hover {
+    border-color: #147350;
+    transform: scale(1.02);
+  }
+
+  .np-product-item img {
+    max-width: 100%;
+    height: 130px;
+  }
+
+  .np-product-info {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .np-product-info span {
+    font-size: 17px;
+    font-weight: bold;
+  }
+
+  .np-prev-button, .np-next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .np-prev-button {
+    left: -50px;
+    transform: translateY(-50%) scaleX(-1); /* 이미지 좌우 반전 및 수직 정렬 */
+  }
+
+  .np-next-button {
+    right: -50px;
+  }
+
+  .np-prev-button img, .np-next-button img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.5; 
+    transition: opacity 0.3s ease; 
+  }
+
+  .np-prev-button img:hover, .np-next-button img:hover {
+    opacity: 1;
+  }
+
+  .np-more-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #42a116;
+    padding: 5px 50px;
+    border: 1px solid #42a116;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .np-more-button:hover {
+    background-color: #42a116;
+    color: #fff;
+  }
+
+  .np-product-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+  }
+
+
+  /*세븐 STORY */
+        @keyframes gradient-animation {
+          0% {
+              background-position: 0% 50%;
+          }
+          50% {
+              background-position: 100% 50%;
+          }
+          100% {
+              background-position: 0% 50%;
+          }
+      }
+      .sevenstory-section {
+          max-width: 80%; 
+          padding: 20px; 
+          border-radius: 0px 200px 200px 0; 
+          background: linear-gradient(270deg, #f36500, #ffd069); /* 그라데이션 배경 (왼쪽에서 오른쪽으로) */
+          background-size: 200% 200%; 
+          animation: gradient-animation 5s linear infinite; 
+          height: 280px;
+          display: flex;
+          align-items: center; 
+          margin-bottom: 80px;
+      }
+
+      
+      .sevenstory-container {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 30px;
+          width: 1000px; /* 고정 너비 설정 */
+          margin: 0 auto; /* 가운데 정렬 */
+      }
+
+      .sevenstory-title {
+          font-size: 2em;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .sevenstory-item {
+          margin-bottom: 20px;
+      }
+
+      .sevenstory-item img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 5px;
+      }
+
+      .sevenstory-item p {
+          font-size: 0.9em;
+          margin-top: 5px;
+          text-align: center;
+      }
+
+      .sevenstory-title {
+          font-size: 45px; /* 제목 텍스트 크기 설정 */
+          color: #ffffff;
+          font-weight: bold;
+          margin-right: 50px; /* 제목과 컨테이너 사이 간격 */
+          text-align: center; /* 가운데 정렬 */
+          line-height: 65px;
+      }
+      
+      .sevenstory-item {
+          text-align: center;
+          flex: 1;
+          max-width: 220px;
+          margin: 10px;
+          transition: transform 0.2s ease-in-out; /* 변화 부드럽게 */
+      }
+      
+      .sevenstory-item:hover {
+          transform: scale(1.05); /* hover 시 살짝 확대 */
+      }
+      
+      .sevenstory-item:nth-child(2) {
+          margin-top: -30px; /* 두 번째 아이템 아래로 내리기 */
+      }
+
+      .sevenstory-item:nth-child(3) {
+          margin-top: 80px; /* 두 번째 아이템 아래로 내리기 */
+      }
+
+      .sevenstory-item:nth-child(4) {
+          margin-top: -30px; /* 두 번째 아이템 아래로 내리기 */
+      }
+      
+      .sevenstory-item img {
+          width: 100%; /* 이미지 너비 100%로 설정 */
+          height: auto; /* 높이 자동 조정 */
+          border-radius: 15px; /* 이미지에 border-radius 적용 */
+      }
+      
+      .sevenstory-item p {
+          font-size: 14px; /* 설명 텍스트 크기 고정값 설정 */
+          overflow: hidden; /* 넘치는 텍스트 감추기 */
+          text-overflow: ellipsis; /* 넘치는 텍스트에 ... 표시 */
+          -webkit-line-clamp: 2; /* 두 줄까지 표시 */
+          -webkit-box-orient: vertical;
+          line-height: 1.2em; /* 줄 간격 설정 */
+          max-height: 2.4em; /* 두 줄의 최대 높이 */
+          color: #ffffff;
+      }
+      
+      .sevenstory-item a {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          margin-top: 5px;
+      }
+
+
+/* 입점상담 및 창업안내 */
+.consult-section-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  width: 1100px; /* 고정 너비 */
+  height: 190px;
+  margin-bottom: 80px;
+}
+
+.consult-section-box {
+  display: flex;
+  flex-direction: row-reverse; /* 이미지가 오른쪽에 오도록 설정 */
+  background-color: #f8f8f8;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  width: 450px; /* 고정 너비 */
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out; /* transform 속성에 대해 0.2초 동안 ease-in-out 속도로 변환 효과 적용 */
+}
+
+.consult-section-box:hover {
+  transform: scale(1.01); /* hover 시 약간 확대됨 */
+}
+
+.consult-section-box img {
+  width: 220px; /* 이미지 고정 너비 */
+  height: 180px;
+  position: absolute;
+  left: 220px;
+  top: -5px;
+}
+
+/* 창업상담 이미지 좌우 반전 */
+.consult-section-box.franchise img {
+  transform: scaleX(-1);
+}
+
+.consult-section-box-content {
+  flex: 1;
+  cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능하게 만듦 */
+}
+
+.consult-section-box h2 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  color: #333;
+  margin-left: 20px;
+  margin-top: 10px; 
+}
+
+.consult-section-box p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #555;
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.consult-section-box a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #000;
+  position: relative; /* 상대 위치 설정 */
+  display: block; /* 블록 레벨 요소로 설정하여 전체 영역을 클릭 가능하도록 함 */
+  width: 100%; /* 부모 요소의 전체 너비를 사용 */
+  height: 100%; /* 부모 요소의 전체 높이를 사용 */
+  z-index: 1; /* 다른 내용을 가리지 않도록 설정 */
+}
+
+.consult-section-box a::after {
+  content: "→"; /* 화살표 모양 추가 */
+  font-size: 50px; /* 화살표 크기 설정 */
+  top: 75px; 
+  left: 20px; /* 화살표 위치 */
+  color: rgba(255, 255, 255, 0.8); /* 화살표 색상 설정 */
+  position: absolute;
+  pointer-events: none; /* 가상 요소로 만든 화살표가 클릭 이벤트를 가로채지 않도록 설정 */
+}
+
+.consult-section-box.partner {
+  background: linear-gradient(to right, #ffc1cc, #fd8b91); /* 입점상담 그라데이션 배경색 */
+}
+
+.consult-section-box.franchise {
+  background: linear-gradient(to right, #FFC19B, #ff9232); /* 창업상담 그라데이션 배경색 */
+}
+
+
+
+
+
+/* 고객센터 상담전화 및 공지사항 */
+.container-info {
+  width: 1050px; /* 고정 너비 */
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+.add-info, .info-info {
+  display: inline-block;
+  width: 46.4%; /* 고정 너비 */
+  vertical-align: top;
+  margin-left: 8px;
+}
+.add-info {
+  margin-right: 5%;
+}
+.add-info h2, .info-info h2 {
+  font-size: 22px;
+  margin-bottom: 0px; /* 평일 운영 시간과 간격 조정 */
+}
+.info-info h2 {
+  margin-bottom: 10px; /* 공지사항 제목과 밑줄 사이의 간격을 늘립니다 */
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px; /* 밑줄 아래 여백 추가 */
+}
+
+.phone {
+  margin-top: -50px; /* 평일 운영 시간과 h2 간격 조정 */
+  color: green;
+  font-size: 35px; /* 폰트 크기 설정 */
+  font-weight: bold;
+  
+}
+.phone p {
+  margin: 0;
+}
+.phone-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px; /* 평일 운영 시간과 전화번호 간격 조정 */
+  margin-left: 2px;
+  margin-bottom: 25px;
+}
+.add-info ul, .info-info ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* 줄 바꿈을 허용 */
+  justify-content: flex-start;
+}
+.add-info ul li, .info-info ul li {
+  flex: 0 0 16%; /* 각 아이템의 너비 고정 */
+  margin-right: 4%; /* 오른쪽 여백 */
+  text-align: center;
+  font-size: 13px;
+}
+
+
+.add-info ul li div, .info-info ul li div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-info ul li img, .info-info ul li img {
+  margin-bottom: 5px;
+  max-width: 57px;
+}
+
+.info-info h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.info-info .notice {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* 공지사항을 왼쪽으로 정렬 */
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.info-info .notice a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 5px;
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.info-info .notice a:hover {
+  text-decoration: underline;
+}
+
+.info-info .more-link {
+  position: absolute;
+  top: -40px;
+  right: -2px;
+}
+
+.info-info .more-link img {
+  width: 17px;
+  height: auto;
+}

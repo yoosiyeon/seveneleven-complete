@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Author" content="http://www.7-eleven.co.kr/"/>
+    <meta name="keywords" content="7-ELEVEN, 세븐일레븐"/>
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sub.css">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <style>
+        .join_hide {display: none;}
+
+        .join_form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 950px;
+            box-sizing: border-box;
+            margin: 50px auto 80px;
+        }
+
+        .join_sevenlogo {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto 30px;
+        }
+
+        input[type="text"] {
+            border: none;
+            border-bottom: 1px solid #bbb9b9;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px 0;
+            margin-bottom: 20px;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-bottom: 2px solid #078051;
+        }
+        .join_label {
+            display: block;
+            margin-bottom: 8px;
+            color: #147350;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 16px;
+        }
+        .join_flex-container {
+            display: flex;
+            align-items: center;
+        }
+        .join_flex-container input[type="text"] {
+            flex: 1;
+        }
+
+        .join_search-button {
+            background-color: #147350;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: -20px;
+        }
+        .join_submit-button {
+            background-color: #147350;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-right: 5px;
+        }
+        .join_return-button {
+            background-color: #ffffff;
+            color: #147350;
+            padding: 10px 20px;
+            border: 1px solid #147350;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        legend {
+            color: #147350;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+        .join_button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .join_wrap {
+            border-bottom: 1px solid #078051;
+            margin-bottom: 50px;
+        }
+
+        .join_checkbox-container {
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .join_checkbox-box {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #147350;
+            border-radius: 5px;
+            margin-right: 10px;
+            position: relative;
+        }
+        .join_checkbox-box.checked::after {
+            content: '\2713';
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #147350;
+            display: block;
+        }
+        .join_checkbox-box input[type="checkbox"] {
+            display: none;
+        }
+        .join_checkbox-label {
+            font-size: 18px;
+            color: #147350;
+        }
+    </style>
+    <script>
+        function join_form_check() {
+            const u_name = document.getElementById("u_name");
+            const u_id = document.getElementById("u_id");
+            const pwd = document.getElementById("pwd");
+            const repwd = document.getElementById("repwd");
+            const mobile = document.getElementById("mobile");
+            const apply = document.getElementById("apply");
+
+            if (u_name.value == "") {
+                alert("이름을 입력하세요.");
+                u_name.focus();
+                return false;
+            }
+
+            if (!u_id.value) {
+                alert("아이디를 입력하세요.");
+                u_id.focus();
+                return false;
+            }
+            let id_len = u_id.value.length;
+            if (id_len < 4 || id_len > 12) {
+                alert("아이디는 4~12글자만 입력할 수 있습니다.");
+                u_id.focus();
+                return false;
+            }
+
+            if (!pwd.value) {
+                alert("비밀번호를 입력하세요.");
+                pwd.focus();
+                return false;
+            }
+
+            let pwd_len = pwd.value.length;
+            if (pwd_len < 4 || pwd_len > 12) {
+                alert("비밀번호는 4~8글자만 입력할 수 있습니다.");
+                pwd.focus();
+                return false;
+            }
+            if (pwd.value != repwd.value) {
+                alert("비밀번호를 확인해주세요.");
+                repwd.focus();
+                return false;
+            }
+
+            const reg = /^[0-9]{10,11}$/;
+            if (!reg.test(mobile.value)) {
+                alert("전화번호는 숫자만 입력할 수 있습니다.");
+                mobile.focus();
+                return false;
+            }
+
+            if (!apply.checked) {
+                alert("약관동의가 필요합니다.");
+                apply.focus();
+                return false;
+            }
+        }
+
+        function change_email() {
+            let email_dns = document.getElementById("email_dns");
+            let email_sel = document.getElementById("email_sel");
+
+            let idx = email_sel.options.selectedIndex;
+            let selected = email_sel.options[idx].value;
+            email_dns.value = selected;
+
+            if (selected == "") {
+                email_dns.readOnly = false;
+                email_dns.focus();
+            } else {
+                email_dns.readOnly = true;
+            }
+        }
+
+        function search_id() {
+            window.open("id_search.html", "a", "width=600, height=400, left=0, top=0");
+        }
+
+        function search_addr() {
+            window.open("addr_search.html", "b", "width=600, height=600, left=0, top=0");
+        }
+
+        function toggleCheckbox(checkboxContainer) {
+            checkboxContainer.querySelector('.join_checkbox-box').classList.toggle('checked');
+            let checkboxInput = checkboxContainer.querySelector('input[type="checkbox"]');
+            checkboxInput.checked = !checkboxInput.checked;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header" class="header">
+        <div class="header_bottom">
+            <!-- logo -->
+            <div class="logo_wrap">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="../images/SevenElevenLogo.png" alt="seveneleven">
+                    </a>
+                </h1>
+            </div>
+        
+            <!-- gnb -->
+            <nav class="gnb">
+            <h2 class="hide">주요 메뉴</h2> 
+            <ul>
+                <li class="menu01">
+                    <a href="../product/intro.html">세븐일레븐 소개</a>
+                    <ul>
+                        <li><a href="../introduce/intro.html">회사소개</a></li>
+                        <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                        <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                        <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                        <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                        <li><a href="../introduce/news.html">NEWS</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu02">
+                    <a href="../event/eventList.html">이벤트</a>
+                    <ul>
+                        <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                        <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu03">
+                    <a href="../event/completeList.html">상품 / 서비스</a>
+                    <ul>
+                        <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                        <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                        <li><a href="../product/presentList.html">이달의 증정할인</a></li>
+                        <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                        <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                        <li><a href="../product/service.html">서비스 안내</a></li>
+                        <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                        <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu04">
+                    <a href="../partner/partnerGuide.html">입점상담</a>
+                    <ul>
+                        <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                        <li><a href="../partner/partnerAdvice.html">입점상담</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu05">
+                    <a href="../franchise/franchiseGuide.html">창업안내</a>
+                    <ul>
+                        <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                        <li><a href="../franchise/franchiseAdvice.html">창업상담</a></li>
+                        <li><a href="../franchise/franchiseExplan.html">창업설명회</a></li>
+                    </ul>
+                </li>
+            </ul>
+    
+            </nav>
+            <!-- map_search -->
+            <div class="map_search">
+                <a href="../map_search.html">
+                <img src="../images/pin.png" alt="매장찾기">
+                </a>
+            </div>
+        </div>
+        <div class="nav_bg"></div>
+    
+        <!-- top menu -->
+        <div class="top_menu">
+        <h2 class="hide">유틸메뉴</h2>
+            <ul>
+                <li><a href="../login.html">로그인</a></li>
+                <li><a href="../join.html">회원가입</a></li>
+            </ul>
+        </div>
+        </header>
+    <form class="join_form" name="join_form" action="index.html" method="get" onsubmit="return join_form_check()">
+        <fieldset>
+            <div class="join_wrap">
+                <legend>회원가입</legend>
+            </div>
+            <p>"*" 표시는 필수입력</p>
+            <p>
+                <label class="join_label">
+                    * 이름
+                    <input type="text" name="u_name" id="u_name">
+                </label>
+            </p>
+
+            <p>
+                <label class="join_label" for="u_id">* 아이디</label>
+                <div class="join_flex-container">
+                    <input type="text" name="u_id" id="u_id">
+                    <button type="button" class="join_search-button" onclick="search_id()">아이디 중복 확인</button>
+                </div>
+                <br>* 영문, 숫자 조합으로 4~12글자만 입력할 수 있습니다.
+            </p>
+
+            <p>
+                <label class="join_label" for="pwd">비밀번호</label>
+                <input type="text" name="pwd" id="pwd">
+                <br>* 4~8글자만 입력할 수 있습니다.
+            </p>
+
+            <p>
+                <label class="join_label" for="repwd">비밀번호 확인</label>
+                <input type="text" name="repwd" id="repwd">
+            </p>
+
+            <p>
+                <label class="join_label" for="mobile">전화번호</label>
+                <input type="text" name="mobile" id="mobile">
+                <br>"-" 없이 숫자만 입력
+            </p>
+
+            <p>
+                <label class="join_label" for="email_id">이메일</label>
+                <div class="join_flex-container">
+                    <input type="text" name="email_id" id="email_id"> @
+                    <input type="text" name="email_dns" id="email_dns" readonly>
+                    <select name="email_sel" id="email_sel" onchange="change_email()">
+                        <option value="">직접 입력</option>
+                        <option value="naver.com">네이버</option>
+                        <option value="hanmail.net">다음</option>
+                        <option value="gmail.com">구글</option>
+                    </select>
+                </div>
+            </p>
+
+            <p>
+                <label class="join_label" for="birth">생년월일</label>
+                <input type="text" name="birth" id="birth">
+                <br>ex) 20240528
+            </p>
+
+            <p>
+                <label class="join_label" for="postalCode">주소</label>
+                <div class="join_flex-container">
+                    <input type="text" name="postalCode" id="postalCode">
+                    <button type="button" class="join_search-button" onclick="search_addr()">우편번호 검색</button>
+                </div>
+                <br>
+                <label class="join_label" for="b_addr">기본 주소</label>
+                <input type="text" name="b_addr" id="b_addr"><br>
+                <label class="join_label" for="d_addr">상세 주소</label>
+                <input type="text" name="d_addr" id="d_addr">
+            </p>
+
+            <p>
+                <label class="join_label" for="apply">약관 동의</label>
+                <div class="join_checkbox-container" onclick="toggleCheckbox(this)">
+                    <div class="join_checkbox-box">
+                        <input type="checkbox" name="apply" id="apply">
+                    </div>
+                    <div class="join_checkbox-label">약관에 동의합니다.</div>
+                </div>
+            </p>
+
+            <div class="join_button-container">
+                <button type="submit" class="join_submit-button">회원가입</button>
+                <button type="button" class="join_return-button">돌아가기</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <!-- 푸터 로고 -->
+                <p class="footer_logo"><img src="../images/footer_logo.png" alt=""></p>
+
+                <!-- 패밀리 사이트 -->
+                <ul class="familySite">
+                    <li class="famMenu">
+                    <div class="textWrap">
+                        <input type="checkbox"name=""id="familySite"/>
+                        <label for="familySite">
+                        <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                        <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="footer_bottom">
+                <!-- 약관 및 정책 -->
+                <div class="footer_menu">
+                    <h3 class="hide">약관 및 정책</h3>
+                    <ul>
+                        <li><a href="#none">사이트맵</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="#none">윤리핫라인</a></li>
+                        <li><a href="#none">불공정거래신고</a></li>
+                        <li><a href="#none">안전보건핫라인</a></li>
+                    </ul>
+                </div>
+
+                <!-- SNS -->
+                <div class="snsWrap">
+                    <div class="youtubeIcon">
+                        <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                            <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                    </div>
+                    <div class="instaIcon">
+                        <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                            <img src="../images/Instagram_logo.png" alt="인스타그램"
+                        /></a>
+                    </div>
+                    <div class="blogIcon">
+                        <a href="https://blog.naver.com/711sns"target="_blank">
+                            <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                    </div>
+                    <div class="facebookIcon">
+                        <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                            <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 연락처 & copyright -->
+            <div class="footer_text">
+                <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+            </div>
+
+            <!-- 인증 -->
+            <div class="ismsp_wrap">
+                <div class="ismsp_logo">
+                    <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                </div>
+                <div class="ismsp_text">
+                    <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                    <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
