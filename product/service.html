@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -689,4 +690,697 @@
         </div>
     </footer>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="http://www.7-eleven.co.kr/"/>
+	<meta name="keywords" content="7-ELEVEN, 세븐일레븐"/>
+	<title>서비스</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/sub.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+                .tab_button ul li:first-child::before{content: ""; display: block; width: 2px; height: 35px;position: absolute; left: 177px; background: #AAA;}
+
+.tab_button ul li:nth-child(2)::before {content: ""; display: block; width: 2px; height: 35px;position: absolute; left: 354px; background: #AAA;}
+
+.tab_button ul li:nth-child(3)::before {content: ""; display: block; width: 2px; height: 35px;position: absolute; left: 531px; background: #AAA;}
+.tab_button ul li:nth-child(4)::before {content: ""; display: block; width: 2px; height: 35px;position: absolute; left: 708px; background: #AAA;}
+.tab_button ul li:nth-child(5)::before {content: ""; display: block; width: 2px; height: 35px;position: absolute; left: 885px; }
+
+        /* 서비스 */
+        .service-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: 50px;
+    }
+
+
+
+    .service-section {
+        margin-bottom: 80px;
+    }
+
+    .service-section h2 {
+        position: relative;
+        padding-left: 20px;
+        color: #147350;
+        margin-bottom: 20px;
+    }
+
+    .service-section h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-55%);
+        width: 10px;
+        height: 20px;
+        background-color: orange;
+        border-radius: 40%;
+    }
+
+    .service-section h4, .service-section p {
+        margin-left: 20px;
+    }
+
+    .service-section p {
+        color: #555;
+    }
+
+    .service-table {
+        width: 90%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        border-top: 3px solid #147350;
+        margin-top: 20px;
+    }
+
+    .service-table th, .service-table td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .service-table th {
+        background-color: #f3f3f3;
+    }
+
+    .service-table th:first-child, .service-table td:first-child {
+        border-left: none;
+    }
+
+    .service-table th:last-child, .service-table td:last-child {
+        border-right: none;
+    }
+
+    .service-image-cell img {
+        max-width: 100px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .service-image {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: 70px;
+    }
+
+    .service-image2 {
+            max-width: 150px; /* 원하는 크기로 조정 */
+            height: auto;
+            margin-left: 20px;
+        }
+
+
+        .service-content {
+            display: flex;
+            align-items: center;
+            gap: 0px; /* 요소 간의 간격 설정 */
+        }
+
+        .service-text-content {
+            flex: 1;
+        }
+
+    /* 탑메뉴 3 css */
+    .service-button-container {
+            text-align: center; /* 버튼을 가운데 정렬 */
+            margin-bottom: 80px;
+        }
+
+        .service-button-container a {
+            display: inline-block;
+            background-color: #147350; 
+            color: white; 
+            border-radius: 30px; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            font-size: 16px; 
+            cursor: pointer; 
+        }
+
+        .service-button-container a:hover {
+            background-color: #235f3d; 
+        }
+        </style>
+        <script>
+            $(document).ready(function(){
+                /* gnb_slideDown */
+                    $(".gnb>ul>li,.nav_bg").hover(function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                    },function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                    });
+
+                /* side_menu_fixed*/
+                $(window).scroll(function(){
+                    let sT = $(window).scrollTop();
+                    
+                    if(sT > 400){
+                        $(".tab_button").addClass("tab_button_fixed");
+                        $(".tab_button_bg").addClass("tab_button_bg_fixed");
+                    } else{
+                        $(".tab_button").removeClass("tab_button_fixed");
+                        $(".tab_button_bg").removeClass("tab_button_bg_fixed");
+                    }
+                });
+
+                /* 탑메뉴 */
+                    $(".tab_button li").click(function () {
+                    var idx = $(this).index();
+                    $(this).addClass("open").siblings().removeClass("open");
+
+                    $(".tab_cont>div")
+                    .eq(idx).addClass("open").siblings(".tab_cont>div").removeClass("open");
+
+                });
+            })
+        </script>
+</head>
+<body>
+
+
+    <!-- header -->
+    <header id="header" class="header">
+    <div class="header_bottom">
+        <!-- logo -->
+        <div class="logo_wrap">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="../images/SevenElevenLogo.png" alt="seveneleven">
+                </a>
+            </h1>
+        </div>
+    
+        <!-- gnb -->
+        <nav class="gnb">
+        <h2 class="hide">주요 메뉴</h2> 
+        <ul>
+            <li class="menu01">
+                <a href="../introduce/intro.html">세븐일레븐 소개</a>
+                <ul>
+                    <li><a href="../introduce/intro.html">회사소개</a></li>
+                    <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                    <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                    <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                    <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                    <li><a href="../introduce/news.html">NEWS</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu02">
+                <a href="../event/eventList.html">이벤트</a>
+                <ul>
+                    <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                    <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu03">
+                <a href="../event/completeList.html">상품 / 서비스</a>
+                <ul>
+                    <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                    <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                    <li><a href="../product/eventProduct.html">이달의 증정할인</a></li>
+                    <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                    <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                    <li><a href="../product/service.html">서비스 안내</a></li>
+                    <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                    <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu04">
+                <a href="../partner/partnerGuide.html">입점상담</a>
+                <ul>
+                    <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                    <li><a href="../partner/partnerAdvice.html">입점상담</a></li>
+                </ul>
+            </li>
+        
+            <li class="menu05">
+                <a href="../franchise/franchiseGuide.html">창업안내</a>
+                <ul>
+                    <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                    <li><a href="../franchise/franchiseAdvice.html">창업상담</a></li>
+                    <li><a href="../franchise/franchiseExplan.html">창업설명회</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        </nav>
+        <!-- map_search -->
+        <div class="map_search">
+            <a href="../map_search.html">
+            <img src="../images/pin.png" alt="매장찾기">
+            </a>
+        </div>
+    </div>
+    <div class="nav_bg"></div>
+
+    <!-- top menu -->
+    <div class="top_menu">
+    <h2 class="hide">유틸메뉴</h2>
+        <ul>
+            <li><a href="../login.html">로그인</a></li>
+            <li><a href="../join.html">회원가입</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <!-- main -->
+    <main>
+    <div id="container"> 
+        <!-- 서브 메뉴 타이틀 -->
+        <div class="title_inner">
+            <h3 class="title_page">서비스 안내</h3>
+            <p class="sub_copy">고객의 작은 소리 하나에도 귀를 기울이겠습니다.</p>
+        </div>
+
+        <!-- 탑메뉴 버튼-->
+            <div class="tab_button">
+                <ul>
+                    <li class="open"><a href="#">생활편의</a></li>
+                    <li><a href="#">카드 / 복권 판매</a></li>
+                    <li><a href="#">택배서비스</a></li>
+                    <li><a href="#">공공요금수납</a></li>
+                    <li><a href="#">상품권판매</a></li>
+                    
+                </ul>
+            </div>
+            <div class="tab_button_bg"></div>
+    
+        <!-- 탑메뉴 내용 -->
+            <div class="tab_cont">
+                <!-- 탑메뉴01 -->
+                <div class="tapmenu01 open">
+                    <section class="submenu"></section>
+            
+                    
+
+                    <div class="service-container">
+                        <section class="service-section">
+                            <h2>현금지급기</h2>
+                            <p>LOTTE ATM은 24시간 365일 입출금이 가능한 서비스입니다.</p>
+                
+                            <h4>금융서비스</h4>
+                            <p>현금 입/출금, 계좌이체, 송금, 현금서비스, 카드론</p>
+                            <h4>부가서비스</h4>
+                            <p>교통카드 충전, 즉시대출, 신용정보조회, 무료대출 진단 등</p>
+                
+                            <h4>수수료 혜택 금융기간</h4>
+                            <p>교통카드 충전, 즉시대출, 신용정보조회, 무료대출 진단 등</p>
+                
+                            <table class="service-table">
+                                <tbody>
+                                    <tr>
+                                        <th>은행사(3개사)</th>
+                                        <td class="service-image-cell">
+                                            <img src="../images/은행사1.png" alt="은행사1">
+                                            <img src="../images/은행사2.svg" alt="은행사2">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>카드사(2개사)</th>
+                                        <td class="service-image-cell">
+                                            <img src="../images/카드사1.png" alt="카드사1">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>기타기관(3개사)</th>
+                                        <td class="service-image-cell">
+                                            <img src="../images/기타기관사1.svg" alt="기타기관1">
+                                            <img src="../images/기타기관사2.png" alt="기타기관2">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+                
+                        <section class="service-section">
+                            <h2>편의점 캐시 (국제전화카드/MVNO)</h2>
+                            <p>다양한 온라인 콘텐츠, 게임캐시, 국제전화카드, 휴대폰 문자쿠폰 등을 편의점에서 구입/충전 할 수 있는 서비스입니다.</p>
+                
+                            <h4>게임이용 가맹점</h4>
+                            <p>틴캐시, 퍼니카드, 넥슨, 온캐시, 피망, 겟엠프드 등 80여 온라인 게임</p>
+                
+                            <h4>생활/문화 이용 가맹점</h4>
+                            <p>문화상품권(컬쳐캐시), 도서문화 상품권, 해피머니 상품권, 도토리 상품권, 온라인 방송 이용권 등</p>
+                
+                            <h4>통신서비스</h4>
+                            <p>휴대폰 문자쿠폰, 국제전화카드, MVNO 서비스 등</p>
+                        </section>
+                
+                        <section class="service-section">
+                            <h2>배달 서비스</h2>
+                            <h4>꽃배달 접수</h4>
+                            <p>1년 365일 향기로운 마음을 전합니다. /당일 3시간 배송!!</p>
+                            <p>전국 전 지역 언제 어디서든 당일 3시간 배송!! (도서 산간 제외)</p>
+                            <p>온라인 1위 업체 플라워365 꽃배달 서비스</p>
+                            <p>1년 365일 향기로운 마음을 전합니다.</p>
+                
+                            <h4>회 배달 서비스</h4>
+                            <p>노량진 수산시장 직송 신선한 회배달 서비스</p>
+                            <p>전일 14시 이후 당일 14시 이전 주문 시 당일 퀵 배송</p>
+                            <p>(서울 전 지역 주문, 배송 가능)</p>
+                        </section>
+                
+                        <section class="service-section">
+                            <h2>쇼핑몰 수남대항</h2>
+                            <p>온라인에서 쇼핑을 하고 편의점에서 현금결제 하실 수 있는 서비스로 <br>24시간 365일 가까운 세븐일레븐을 이용하세요.</p>
+                
+                            <h4>결제 대금 수납 서비스</h4>
+                            <p>전국 세븐일레븐, 바이더웨이 편의점에서 24시간 365일 쇼핑몰 결제 대금 수납 서비스</p>
+                
+                            <h4>생활/문화 이용 가맹점</h4>
+                            <p>현재, 오픈마켓 ‘11번가’, ‘바보사랑’ 의 결제대금 수납(현금결제, 신용카드 개발 중)이 가능하며, <br>향후 모든 온라인 쇼핑몰로 확대 예정</p>
+                
+                            <img src="../images/service.PNG" alt="서비스 방법" class="service-image">
+                        </section>
+                    </div>
+
+        
+                            
+                </div>
+                
+                <!-- 탑메뉴02 -->
+                <div class="tapmenu02">
+                    <section class="submenu">
+                        <div class="service-container">
+                            <section class="service-section">
+                                <h2>하이패스 충전 / 판매</h2>
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>하이패스 카드 판매</h4>
+                                        <p>하이패스 선불카드, 자동카드를 판매합니다.</p> 
+                                    </div>
+                                    <img src="../images/하이패스카드1.jpg" alt="하이패스 카드 판매" class="service-image2">
+                                </div>
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>하이패스 카드 충전</h4>
+                                        <p>SM 하이플러스에서 출시한 <br>모든 하이패스 카드 충전(1천원 단위)이 가능합니다.</p>
+                                    </div>
+                                    <img src="../images/하이패스카드2.jpg" alt="하이패스 카드 충전" class="service-image2">
+                                </div>
+                            </section>
+                    
+                            <section class="service-section">
+                                <h4>교통카드 충전 / 판매</h4>
+                                <p>캐시비, 마이비 T머니 카드 충전 및 판매 서비스를 제공합니다.</p> 
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>캐시비 카드</h4>
+                                        <p>서비스지역 : 서울, 경기, 충북, 천안, 아산, 충남, 전북, 광주, 전남, 제주,<br> 춘천, 강릉, 태백, 동해, 구미, 김천, 경주, 포항, 울산, 경남, 부산</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>T머니 카드</h4>
+                                        <p>서비스지역 : 서울, 경기, 충북, 천안, 아산, 충남, 전북, 전남, 제주,<br>강릉, 태백, 동해, 원주, 구미, 김천, 경주, 포항, 울산, 경남, 부산</p>
+                                    </div>
+                                </div>
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>한페이 카드</h4>
+                                        <p>서비스지역 : 광주</p>
+                                    </div>
+                                </div>
+                            </section>
+                    
+                            <section class="service-section">
+                                <h2>전화카드 판매</h2>
+                                <p>공중전화 카드, 선불 국제전화카드를 판매합니다.</p>
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>공중전화 카드</h4>
+                                        <p>공중전화기 어디서나 사용할 수 있는 공중전화 카드</p>
+                                    </div>
+                                </div>
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>선불국제전화 카드</h4>
+                                        <p>전 세계 어느 곳이나 저렴한 가격으로 통화 할 수 있는 선불형 카드</p>
+                                    </div>
+                                </div>
+                            </section>
+                    
+                            <section class="service-section">
+                                <h2>복권 판매</h2>
+                                <p>인쇄복권, 온라인 복권을 판매합니다.</p>
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>인쇄복권 (스피또, 연금 복권)</h4>
+                                        <p>즉석에서 바로 행운을 확인 할 수 있는 스피또 500, 스피또 1000, 스피또 2000 판매 중</p>
+                                    </div>
+                                </div>
+                    
+                                <div class="service-content">
+                                    <div class="service-text-content">
+                                        <h4>스포츠토토</h4>
+                                        <p>복권 발매기 설치 운영 점포에서만 가능</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- 탑메뉴03 -->
+                <div class="tapmenu03">
+                    <div class="service-container">
+                        <section class="service-section">
+                            <h2>롯데택배와 함께하는 택배 서비스</h2>
+                            <p>전국 세븐일레븐 점포에서 만나세요! (일부 점포 제외)</p> 
+                        </section>
+                
+                        <section class="service-section">
+                            <h2>전화카드 판매</h2>
+                            <p>공중전화 카드, 선불 국제전화카드를 판매합니다.</p>
+                        </section>
+                
+                        <section class="service-section">
+                            <h2>복권 판매</h2>
+                            <p>인쇄복권, 온라인 복권을 판매합니다.</p>
+                
+                            <h4>익일 배송 마감 시간</h4>
+                            <p>수도권, 광역시 : 당일 17시 이전 접수</p>
+                            <p>그 외 지역 : 당일 15시 이전 접수분</p>
+                            <p>일부 지역(수도권 포함)은 지역 특성에 따라 달라질 수 있습니다.</p>
+                            <p>주말 접수분은 익일 배송이 불가할 수 있습니다.</p>
+                        </section>
+                
+                        <div class="service-button-container">
+                            <a href="https://www.lotteglogis.com/home/reservation/tracking/index">롯데택배 배송조회</a>
+                        </div>
+                    </div>
+                </div>
+
+    <!-- 탑메뉴04 -->
+    <div class="tapmenu04">
+        <div class="service-container">
+            <section class="service-section">
+                <h2>공공요금수납</h2>
+                <p>전국 어디에서나 1년 365일 24시간 각종 공과금 및 국세, 지방세 등을 은행보다 편리하게 납부 가능합니다.</p> 
+    
+                <h4>세금</h4>
+                <p>국세 : 지방 소득세, 종합부동산 소득세, 부가가치세, 법인세, 상속세 등</p>
+                <p>지방세 : 재산세, 자동차세, 주민세, 각종 범칙금 등</p>
+    
+                <h4>공과금</h4>
+                <p>전기, 통신요금 : KT, 온세텔레콤, LG+</p>
+                <p>신문대금 : 조선일보, 중앙일보, 동아일보</p>
+                <p>케이블 TV 요금 : TBROAD, HCN, C&M 등</p>
+                <p>도시가스 요금</p>
+    
+                <h4>기타</h4>
+                <p>국민연금</p>
+                <p>적십자회비</p>
+            </section>
+        </div>
+    </div>
+
+<!-- 탑메뉴05 -->
+    <div class="tapmenu05">
+        <div class="service-container">
+            <section class="service-section">
+                <h2>상품권판매</h2>
+                <p>5천원권, 1만원권, 5만원권 판매</p>
+                <p>도서음반, 영화티켓, 외식, 인터넷에서 사용 가능한 소액 결제 상품권</p>
+            </section>
+        </div>
+    </div>
+
+
+    </main>
+    
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <!-- 푸터 로고 -->
+                <p class="footer_logo"><img src="../images/footer_logo.png" alt=""></p>
+
+                <!-- 패밀리 사이트 -->
+                <ul class="familySite">
+                    <li class="famMenu">
+                    <div class="textWrap">
+                        <input type="checkbox"name=""id="familySite"/>
+                        <label for="familySite">
+                        <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                        <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="footer_bottom">
+                <!-- 약관 및 정책 -->
+                <div class="footer_menu">
+                    <h3 class="hide">약관 및 정책</h3>
+                    <ul>
+                        <li><a href="#none">사이트맵</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="#none">윤리핫라인</a></li>
+                        <li><a href="#none">불공정거래신고</a></li>
+                        <li><a href="#none">안전보건핫라인</a></li>
+                    </ul>
+                </div>
+
+                <!-- SNS -->
+                <div class="snsWrap">
+                    <div class="youtubeIcon">
+                        <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                            <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                    </div>
+                    <div class="instaIcon">
+                        <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                            <img src="../images/Instagram_logo.png" alt="인스타그램"
+                        /></a>
+                    </div>
+                    <div class="blogIcon">
+                        <a href="https://blog.naver.com/711sns"target="_blank">
+                            <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                    </div>
+                    <div class="facebookIcon">
+                        <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                            <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 연락처 & copyright -->
+            <div class="footer_text">
+                <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+            </div>
+
+            <!-- 인증 -->
+            <div class="ismsp_wrap">
+                <div class="ismsp_logo">
+                    <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                </div>
+                <div class="ismsp_text">
+                    <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                    <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+>>>>>>> 0d2153c96c52ab25c52872b296cadc90d92f2092
 </html>

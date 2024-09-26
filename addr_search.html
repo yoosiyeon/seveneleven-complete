@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -114,3 +115,121 @@ function confirmAddress() {
 </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>우편번호 검색</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 700px;
+    width: 90%;
+  }
+  input[type="text"], input[type="button"] {
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    outline: none;
+  }
+  input[type="text"]:focus, input[type="button"]:hover {
+    border-color: #147350;
+  }
+  input[type="button"] {
+    background-color: #147350;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  input[type="button"]:hover {
+    background-color: #125c46;
+  }
+  .confirm-button {
+    background-color: #147350;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  .confirm-button:hover {
+    background-color: #125c46;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>우편번호 검색</h2>
+  <p>
+    <input type="text" id="zip-code" placeholder="우편번호" readonly>
+    <input type="button" onclick="execDaumPostcode()" value="우편번호 찾기">
+    <input type="button" onclick="execDaumPostcodeReset()" value="초기화">
+  </p>
+  <p>
+    <input type="text" id="address-1" placeholder="기본 주소" style="width: 100%;" readonly>
+  </p>
+  <p>
+    <input type="text" id="address-1-1" placeholder="상세 주소" style="width: 100%;" readonly>
+  </p>
+  <p>
+    <button class="confirm-button" onclick="confirmAddress()">확인</button>
+  </p>
+</div>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+function execDaumPostcode() {
+  new daum.Postcode({
+    oncomplete: function(data) {
+      document.getElementById('zip-code').value = data.zonecode;
+      document.getElementById('address-1').value = data.address; 
+      document.getElementById('address-1-1').value = data.jibunAddress;
+    }
+  }).open();
+}
+function execDaumPostcodeReset() {
+  document.getElementById('zip-code').value = null;
+  document.getElementById('address-1').value = null;
+  document.getElementById('address-1-1').value = null;
+}
+function confirmAddress() {
+  let zipCode = document.getElementById('zip-code').value;
+  let address1 = document.getElementById('address-1').value;
+  let address1_1 = document.getElementById('address-1-1').value;
+
+  // 부모 창의 주소 입력란에 값 채우기
+  window.opener.document.getElementById('postalCode').value = zipCode;
+  window.opener.document.getElementById('b_addr').value = address1; // 기본 주소
+  window.opener.document.getElementById('d_addr').value = address1_1; // 상세 주소
+
+  window.close(); // 팝업 창 닫기
+}
+</script>
+</body>
+</html>
+>>>>>>> 0d2153c96c52ab25c52872b296cadc90d92f2092

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -560,4 +561,568 @@
         </div>
     </footer>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/ico_7eleven_favicon.png" type="image/png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="http://www.7-eleven.co.kr/"/>
+	<meta name="keywords" content="세븐일레븐 소개 | 7-ELEVEN, 세븐일레븐"/>
+	<title> 윤리경영 | 회사소개 | 7-ELEVEN | 세븐일레븐</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <style>
+    
+        /* main */
+
+        .active{ transition: all 0.5s ; opacity: 1;}
+
+        .index_TopBtn{width: 50px;height: 50px;border-radius: 200%; border: 1px solid #aaa; position: fixed; right: -100px; bottom: 10px; transform: translateY(-50%); transition: right 0.2s; padding: 7px 5px 20px 9px;  box-sizing: border-box;background: #fff;}
+
+        .index_TopBtn img{width: 30px; }
+
+        /* 서브 메뉴 타이틀 */
+
+        .title_inner{text-align: center; margin-top: 131px; color: #333333; }
+
+        .title_page{font-size:45px; font-weight: bold;}
+
+        .sub_copy{font-size: 16px;height: 55px;}
+
+        /* 탑메뉴 메뉴 */
+
+        .tab_button{margin: 0 auto; width: 1240px; position: relative;}
+
+        .tab_button_bg{position: absolute; width:100%; height:0px; z-index: 40; border-bottom: 1px solid #AAA;}
+
+        .tab_button ul{display: flex; font-size: 18px; color: #555; justify-content: center;}
+
+        .tab_button ul li{width: 177px;height: 65px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;position: relative;}
+
+            /* 탑메뉴 장식 */
+
+        .tab_button ul li:first-child::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+        .tab_button ul li:nth-child(2)::after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+        .tab_button ul li:nth-child(3):after{content: ""; display: block; width: 2px; height: 35px; position: absolute; left: 177px; background: #AAA;}
+
+        /* 메인 컨텐츠 중앙 정렬 1240px */
+
+        .submenu{margin: 0 auto; width: 1240px;}
+
+        /* 텍스트 컨텐츠 -> 불필요시 삭제 */
+
+        .sub_icon{display: flex; align-items: center;}
+
+        .submenu_top{display: flex; align-items: center;margin-top: 80px}
+
+        .submenu_title{padding-left: 26px; font-size: 30px;}
+
+            /*텍스트 컨텐츠_내용*/
+
+        .submenu_text{margin: 5px 0 0 36px; font-size: 17px; color: #555;}
+
+        .submenu_text span{color: #147350; font-weight: bold;}/* 텍스트 컨텐츠_글씨 강조 */
+
+        
+        /* 탭메뉴 01 */
+
+        span{font-weight: bold;}
+
+        .ethicalManagement{margin: 0 auto; position: relative; text-align: justify;}
+
+        .sub_title{font-size: 45px; margin:100px 0px 50px 150px; text-align: center;}
+
+        .sub_title.active{transform: translateX(0); opacity: 1;}
+
+        .sub_title > span{color: #147350;}
+
+        .ethical_cont > div{display: flex;justify-content: center; gap: 50px;padding: 30px 0px 50px 0px;}
+
+        .ethical_cont p{width: 400px; align-self: center;line-height: 2.5; letter-spacing: 0.7px;}
+
+        .ethical_cont > div > div{width: 400px;height: 300px; background: #555;border-radius: 35px; overflow: hidden;}
+
+        .ethical_cont img{height: 300px;}
+
+        .ethical_middle{background: #494949; color: #fff; font-size: 20px; padding: 70px; line-height: 3; margin: 50px 0px;}
+
+        .ethical_middle p{text-align: center; z-index: 10; position: relative;}
+
+        .span_pur01::before{content: ""; width: 160px; height: 3px; position: absolute; top: 45px; left: 50%; margin-left: 9px; background:#E50112;}
+
+        .span_pur02::after{content: ""; width: 135px; height: 3px; position: absolute; top: 105px; left: 50%;margin-left: 160px; background:#FF6C00;}
+
+        .span_pur03::after{content: ""; width: 140px; height: 3px; position: absolute; bottom:12px; left: 50%;margin-left: -163px; background:#147350;}
+
+        .ethical_cont2{display: flex; justify-content: space-between;align-items: end; width: 1240px;margin: 0 auto;padding: 30px 0px;}
+
+        .ethical_cont2 img{width: 400px;}
+
+        .ethicalList div{width: 400px;height: 300px; display: flex;align-items: center; justify-content: space-around; border-radius: 35px; margin: 30px 0px;}
+
+        .ethicalList span{color: #147350; font-size: 20px; padding: 10px; margin-top: 30px;}
+
+        .ethicalList ul{font-size: 15px; line-height: 2; padding: 10px;}
+
+        .safetyManagement{margin-bottom: 180px;}
+
+        .safety_wrap{text-align: center; padding: 30px; font-size: 45px;}
+
+        .safety_wrap span{color: #147350;}
+
+        .safety_wrap p:last-child{font-size: 15px;padding-top: 20px;}
+
+        .safety_cont{text-align: center;}
+
+        .safety_cont P{color: #147350; font-size: 28px;padding: 20px 0px 10px; font-style: italic;}
+
+
+        /* 애니메이션 */
+
+        .pur_animation{transform: translateY(-10%); opacity: 0; transition: 0.8s;}
+
+        .pur_animation.active{transform: translateX(0); opacity: 1;}
+
+
+        </style>
+        <script>
+            $(document).ready(function(){
+                /* gnb_slideDown */
+                    $(".gnb>ul>li, .nav_bg").hover(function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideDown("fast");
+                    },function(){
+                        $(".gnb ul ul, .nav_bg").stop().slideUp("fast");
+                    });
+
+                /* side_menu_fixed*/
+                $(window).scroll(function(){
+                    let sT = $(window).scrollTop();
+                    
+                    if(sT > 400){
+                        $(".tab_button").addClass("tab_button_fixed");
+                        $(".tab_button_bg").addClass("tab_button_bg_fixed");
+                    } else{
+                        $(".tab_button").removeClass("tab_button_fixed");
+                        $(".tab_button_bg").removeClass("tab_button_bg_fixed");
+                    }
+                });
+
+                /* 탑메뉴 */
+                    $(".tab_button li").click(function () {
+                    var idx = $(this).index();
+                    $(this).addClass("open").siblings().removeClass("open");
+
+                    $(".tab_cont>div")
+                    .eq(idx).addClass("open").siblings(".tab_cont>div").removeClass("open");
+
+
+                });
+
+                /* 탑버튼 */
+            $(window).scroll(function(){
+            let sT = $(window).scrollTop();
+                    
+            if(sT > 500){
+                $(".index_TopBtn").css({right: 220});
+                    } else{
+                $(".index_TopBtn").css({right: -100})
+                    }
+                });
+            })
+        </script>
+</head>
+<body>
+
+    <!-- header -->
+    <header id="header" class="header">
+    <div class="header_bottom">
+        <!-- logo -->
+        <div class="logo_wrap">
+            <h1 class="logo">
+                <a href="../index.html">
+                    <img src="../images/SevenElevenLogo.svg" alt="seveneleven" width="181px" height="33px">
+                </a>
+            </h1>
+        </div>
+    
+        <!-- gnb -->
+        <nav class="gnb">
+            <h2 class="hide">주요 메뉴</h2> 
+            <ul>
+                <li class="menu01">
+                    <a href="../introduce/intro.html">세븐일레븐 소개</a>
+                    <ul>
+                        <li><a href="../introduce/intro.html">회사소개</a></li>
+                        <li><a href="../introduce/contribute.html">ESG 경영</a></li>
+                        <li><a href="../introduce/purpose.html">윤리·안전·보건 경영</a></li>
+                        <li><a href="../introduce/recruitPerson.html">채용안내</a></li>
+                        <li><a href="../introduce/noticeList.html">공지사항</a></li>
+                        <li><a href="../introduce/news.html">NEWS</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu02">
+                    <a href="../event/eventList.html">이벤트</a>
+                    <ul>
+                        <li><a href="../event/eventList.html">진행중인 이벤트</a></li>
+                        <li><a href="../event/completeList.html">종료된 이벤트</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu03">
+                    <a href="../product/FreshfoodList.html">상품 / 서비스</a>
+                    <ul>
+                        <li><a href="../product/FreshfoodList.html">Fresh Food</a></li>
+                        <li><a href="../product/7cafe.html">세븐 카페</a></li>
+                        <li><a href="../product/presentList.html">이달의 증정할인</a></li>
+                        <li><a href="../product/presentList.html">PB상품 / 신상품</a></li>
+                        <li><a href="../product/cardInfo.html">할인·멤버십 카드</a></li>
+                        <li><a href="../product/service.html">서비스 안내</a></li>
+                        <li><a href="../product/sevenapp.html">세븐 APP</a></li>
+                        <li><a href="../product/cvmsForm.html">고객의 소리</a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu04">
+                    <a href="../partner/partnerGuide.html">입점상담</a>
+                    <ul>
+                        <li><a href="../partner/partnerGuide.html">상품입점안내</a></li>
+                        <li><a href="https://www.7-eleven.co.kr/mp/main.asp">동반성장<img src="../images/arrow-up-right.png"alt="동반성장 링크가기"></a></li>
+                    </ul>
+                </li>
+            
+                <li class="menu05">
+                    <a href="../franchise/franchiseGuide.html">창업안내</a>
+                    <ul>
+                        <li><a href="../franchise/franchiseGuide.html">창업가이드</a></li>
+                        <li><a href="../franchise/franchiseExplan.html">창업절차</a></li>
+                        <li><a href="../franchise/franchiseAdvice.html">창업설명회</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        </nav>
+        <!-- map_search -->
+        <div class="map_search">
+            <a href="../map_search.html">
+            <img src="../images/pin.png" alt="매장찾기">
+            </a>
+        </div>
+    </div>
+    <div class="nav_bg"></div>
+    
+
+    <!-- top menu -->
+    <div class="top_menu">
+    <h2 class="hide">유틸메뉴</h2>
+        <ul>
+            <li><a href="../login.html">로그인</a></li>
+            <li><a href="../join.html">회원가입</a></li>
+        </ul>
+    </div>
+    </header>
+
+    <!-- main -->
+    <main>
+    <div id="container"> 
+        <!-- 서브 메뉴 타이틀 -->
+        <div class="title_inner">
+            <h3 class="title_page">윤리ㆍ안전 ㆍ보건 경영</h3>
+            <p class="sub_copy">임직원의 안전한 근무환경과 가맹점의 산업재해 예방을 위하여 지속적인 개선과 적극적인 지원을 하고 있습니다.</p>
+        </div>
+
+        <!-- 탑메뉴 버튼-->
+            <div class="tab_button_bg"></div>
+            <div class="index_TopBtn">
+                <a href="#"><img src="../images/topBtn.png" alt="위로가기"></a>
+            </div>
+    
+        <!-- 탑메뉴 내용 -->
+            <div class="tab_cont">
+                <!-- 탑메뉴01 -->
+                <div class="tapmenu01">
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">윤리 경영</p>
+                        </div>
+                        <p class="submenu_text">기업의 사회적 책임을 다하고, 국가와 인류의 공동이익을 추구하기 위한 윤리강령과 구체적인 실천지침을 제정</p>
+                    </section>
+
+                    <section class="ethicalManagement">
+                        <div class="ethical_wrap">
+                            <p class="sub_title pur_animation"><span>윤리규범</span>의 배경 및 구상</p>
+                            <div class="ethical_cont">
+                                <div>
+                                    <p class="pur_animation">현대사회는 소비자 의식 성장과 정보화의 비약적 발전으로 한 기업의 비윤리적 행동은 기업의 영속 자체를 위협할 수 있는 수준이 되었고, 사회적 책임경영의 중요성이 날로 커지고 있습니다. 또한 윤리경영과 관련된 규제도 점차적으로 확대되고 있으며, </p>
+                                    <div class="pur_animation"><img src="../images/ethicalManagement_01.jpg" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="ethical_cont">
+                                <div>
+                                    <div class="pur_animation"><img src="../images/ethicalManagement_02.jpg" alt=""></div>
+                                    <p class="pur_animation">일례로 ISO26000(국제 표준기구 ISO재정, 조직의 사회책임 활동 증진 위한 국제표준 가이드라인)을 통해 기업의 사회적 책임을 검증 받을 것을 요구하고 있습니다. </p>
+                                </div>
+                            </div>
+                            <div class="ethical_middle">
+                                <p>이제 윤리경영의 실천은 <span class="span_pur01 pur_animation">선택이 아닌 필수</span>이며,<br>
+                                    당사 내부적으로도 기업활동의 사회적 영향력을 중시하고 <span class="span_pur02 pur_animation">동반성장 실천</span>을 통해<br>
+                                    고객과 이해관계자에게 <span class="span_pur03 pur_animation">신뢰받는 기업</span>으로 성장하는데 많은 관심을 두고 있습니다.</p>
+                            </div>
+                            <div class="ethical_cont2">
+                                <div class="ethicalList pur_animation">
+                                    <div><img src="../images/ethicalManagement_03.png" alt=""></div>
+                                    <span>롯데인의 행동강령</span>
+                                    <ul>
+                                        <li>고객과의 신뢰</li>
+                                        <li>임직원과의 신뢰</li>
+                                        <li>파트너와의 신뢰</li>
+                                        <li>주주와의 신뢰</li>
+                                        <li>사회와의 신뢰</li>
+                                    </ul>
+                                </div>
+                                <div class="ethicalList pur_animation">
+                                    <div><img src="../images/ethicalManagement_04.png" alt=""></div>
+                                    <span>윤리강령실천지침</span>
+                                    <ul>
+                                        <li>복무규정 등의 기본 규정의 준수</li>
+                                        <li>회사임직원으로서의 품위 유지</li>
+                                        <li>업무상 거래 업체로부터의 금전수수 금지</li>
+                                        <li>직장내 성희롱 금지</li>
+                                        <li>회사 자산, 재산에 대한 보호</li>
+                                        <li>부적절한 대외 활동</li>
+                                        <li>불공정 거래 금지</li>
+                                        <li>* 상기 내용에 대한 구체적인 행동요령 제공</li>
+                                    </ul>
+                                </div>
+                                <div class="ethicalList pur_animation">
+                                    <div><img src="../images/ethicalManagement_05.png" alt=""></div>
+                                    <span>윤리강령실천지침</span>
+                                    <ul>
+                                        <li>제보제도 운영규정</li>
+                                        <li>제보 목적, 범위, 대상</li>
+                                        <li>제보채널 운영</li>
+                                        <li>제보자보호 및 비밀유지</li>
+                                        <li>위반에 대한 제재</li>
+                                        <li>제보 포상 등</li>
+                                        <li>제보제도 운영규정</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="submenu">
+                        <div class="submenu_top">
+                            <div class="sub_icon"><img src="../images/sub_icon.svg" alt="서브타이틀_아이콘"></div>
+                            <p class="submenu_title">안전·보건 경영</p>
+                        </div>
+                        <p class="submenu_text"></p>
+                    </section>
+
+                    <section class="safetyManagement">
+                        <div class="safety_wrap">
+                            <p class="pur_animation"><span>안전보건</span> 경영방침</p>
+                            <p class="pur_animation">회사는 일상 속의 유해•위험에서 고객과 국민을 보호하고<br>
+                                임직원의 건강하고 안전한 근무환경 조성에 최선을 다하여 중대재해 ZERO 사업장을 지속 달성한다.</p>
+                        </div>
+                        <div class="safety_cont">
+                            <ul>
+                                <li class="pur_animation"><P>1</P>안전과 보건을 최우선으로 고려하여 안전보건 중심의 의사결정을 추구한다.</li>
+                                <li class="pur_animation"><P>2</P>안전보건 관련 법규와 사내 규정을 충실히 이행하고 교육 및 훈련에 적극적으로 참여한다.</li>
+                                <li class="pur_animation"><P>3</P>사업장의 화재 및 안전사고 예방과 위험요인을 제거하기 위해 지속적으로 최선을 다한다.</li>
+                                <li class="pur_animation"><P>4</P>조직과 직책을 넘어 상호 협력과 소통을 통해 자율적이고 성숙한 안전문화를 지향한다.</li>
+                                <li class="pur_animation"><P>5</P>지속 가능한 안전,보건 관리체계로 고도화하여 사회안전망에 기여한다.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+    </div>
+    <script>
+            
+    //스크롤애니메이션//
+    const options = {
+        root: null, // viewport
+        rootMargin: "0px",
+        threshold: 0.1,  // 10%가 viewport에 들어와 있어야 callback 실행
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        console.log(entry.isIntersecting);
+        if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        } else {
+        entry.target.classList.remove("active");
+            }
+        });
+    }, options);
+
+    const titleList = document.querySelectorAll('.pur_animation');
+
+    // 반복문을 돌려 모든 DOM에 적용
+    titleList.forEach(el => observer.observe(el));
+
+    </script>
+    </main>
+    
+
+    <!-- footer -->
+    <footer id="footer" class="footer">
+        <div class="footer_wrap">
+            <div class="footer_top">
+                <!-- 푸터 로고 -->
+                <p class="footer_logo"><img src="images/footer_logo.png" alt=""></p>
+
+                <!-- 패밀리 사이트 -->
+                <ul class="familySite">
+                    <li class="famMenu">
+                    <div class="textWrap">
+                        <input type="checkbox"name=""id="familySite"/>
+                        <label for="familySite">
+                        <span class="text">패밀리사이트<div style="line-height: 15px;font-size: 22px;" class="icon">+</div></span>
+                        <ul class="familySiteList" style="max-height: 30vh; overflow-y:scroll;">
+                                <li><a href="http://www.lotte.co.kr/" target='_blank' class="familySiteItem">롯데그룹</a></li>
+                                <li><a href="http://www.lpoint.com" target='_blank' class="familySiteItem">L.POINT</a></li>
+                                <li><a href="http://job.lotte.co.kr/LotteRecruit/" target='_blank' class="familySiteItem">롯데채용센터</a></li>
+                                <li><a href="http://lotteconf.co.kr/" target='_blank' class="familySiteItem">롯데제과</a></li>
+                                <li><a href="http://company.lottechilsung.co.kr" target='_blank' class="familySiteItem">롯데칠성음료</a></li>
+                                <li><a href="http://www.lotteria.com/" target='_blank' class="familySiteItem">롯데리아</a></li>
+                                <li><a href="http://www.angelinus.co.kr/" target='_blank' class="familySiteItem">엔제리너스</a></li>
+                                <li><a href="http://www.tgif.co.kr/" target='_blank' class="familySiteItem">T.G.I Friday's</a></li>
+                                <li><a href="http://www.krispykreme.co.kr/" target='_blank' class="familySiteItem">크림스피크림 도넛</a></li>
+                                <li><a href="http://www.lottefoods.co.kr/" target='_blank' class="familySiteItem">롯데푸드</a></li>
+                                <li><a href="http://www.lotteliquor.com" target='_blank' class="familySiteItem">롯데주류BG</a></li>								
+                                <li><a href="http://store.lotteshopping.com/" target='_blank' class="familySiteItem">롯데백화점</a></li>
+                                <li><a href="https://www.lotteshopping.com/main/main" target='_blank' class="familySiteItem">에비뉴엘</a></li>
+                                <li><a href="http://www.lottemart.com/" target='_blank' class="familySiteItem">롯데마트</a></li>
+                                <li><a href="http://www.e-himart.co.kr/" target='_blank' class="familySiteItem">롯데하이마트</a></li>
+                                <li><a href="http://toysrus.lottemart.com" target='_blank' class="familySiteItem">토이저러스</a></li>
+                                <li><a href="http://www.lottesuper.co.kr/" target='_blank' class="familySiteItem">롯데슈퍼</a></li>
+                                <li><a href="http://www.vic-market.com" target='_blank' class="familySiteItem">롯데빅마켓</a></li>
+                                <li><a href="http://www.lottecinema.co.kr/" target='_blank' class="familySiteItem">롯데시네마</a></li>
+                                <li><a href="http://www.lotteimall.com/" target='_blank' class="familySiteItem">롯데홈쇼핑</a></li>
+                                <li><a href="http://www.7-eleven.co.kr/" target='_blank' class="familySiteItem">코리아세븐</a></li>
+                                <li><a href="https://store-kr.uniqlo.com/" target='_blank' class="familySiteItem">유니클로</a></li>
+                                <li><a href="http://www.muji.com" target='_blank' class="familySiteItem">무인양품</a></li>
+                                <li><a href="http://www.lotteintl.co.kr/" target='_blank' class="familySiteItem">롯데상사</a></li>
+                                <li><a href="http://www.lotte.com/" target='_blank' class="familySiteItem">롯데닷컴</a></li>
+                                <li><a href="http://lottelmsc.com/" target='_blank' class="familySiteItem">롯데유통사업본부</a></li>
+                                <li><a href="http://www.charlottetheater.co.kr/" target='_blank' class="familySiteItem">샤롯데시어터</a></li>
+                                <li><a href="http://www.lohbs.co.kr/" target='_blank' class="familySiteItem">H&amp;B(롭스)</a></li>
+                                <li><a href="http://www.lottefitin.com/" target='_blank' class="familySiteItem">롯데피트인</a></li>
+                                <li><a href="http://www.lottehotel.com/" target='_blank' class="familySiteItem">롯데호텔</a></li>
+                                <li><a href="http://www.lottehotel.com/busan/ko/" target='_blank' class="familySiteItem">부산롯데호텔</a></li>
+                                <li><a href="http://kr.lottedfs.com/" target='_blank' class="familySiteItem">롯데면세점</a></li>
+                                <li><a href="http://www.lottedfs.com/" target='_blank' class="familySiteItem">롯데인터넷면세점</a></li>
+                                <li><a href="http://www.busanlottedfs.com/" target='_blank' class="familySiteItem">부산롯데인터넷면세점</a></li>
+                                <li><a href="http://www.lotteworld.com" target='_blank' class="familySiteItem">롯데월드</a></li>
+                                <li><a href="http://www.lottecorp.com/" target='_blank' class="familySiteItem">롯데물산</a></li>
+                                <li><a href="http://www.lwt.co.kr" target='_blank' class="familySiteItem">롯데월드타워&몰</a></li>
+                                <li><a href="http://gimpoairport.lottemall.co.kr" target='_blank' class="familySiteItem">롯데몰 김포공항점</a></li>
+                                <li><a href="http://www.lottejtb.com/" target='_blank' class="familySiteItem">롯데제이티비</a></li>
+                                <li><a href="http://www.lotteins.co.kr/" target='_blank' class="familySiteItem">롯데손해보험</a></li>
+                                <li><a href="http://www.lottecard.co.kr/" target='_blank' class="familySiteItem">롯데카드</a></li>
+                                <li><a href="http://www.lottecap.com/" target='_blank' class="familySiteItem">롯데케피탈</a></li>
+                                <li><a href="http://www.lottecon.co.kr/" target='_blank' class="familySiteItem">롯데건설</a></li>
+                                <li><a href="http://www.fujifilm.co.kr/" target='_blank' class="familySiteItem">한국후지필름</a></li>
+                                <li><a href="http://www.lotteal.co.kr/" target='_blank' class="familySiteItem">롯데알미늄</a></li>
+                                <li><a href="http://www.lottechem.com/contents/main/main.asp" target='_blank' class="familySiteItem">롯데케미칼</a></li>
+                                <li><a href="http://www.lottemcc.com" target='_blank' class="familySiteItem">롯데엠시시</a></li>
+                                <li><a href="http://www.canon-bs.co.kr/" target='_blank' class="familySiteItem">캐논코리아 비즈니스솔루션</a></li>
+                                <li><a href="http://www.lottelem.co.kr/" target='_blank' class="familySiteItem">롯데기공</a></li>
+                                <li><a href="http://www.lotteacademy.co.kr/" target='_blank' class="familySiteItem">롯데인재개발원</a></li>
+                                <li><a href="http://ez.lotteacademy.co.kr" target='_blank' class="familySiteItem">사이버 인재개발원</a></li>
+                                <li><a href="https://www.lotteinnovate.com/" target='_blank' class="familySiteItem">롯데이노베이트</a></li>
+                                <li><a href="http://www.giantsclub.com/" target='_blank' class="familySiteItem">롯데자이언츠</a></li>
+                                <li><a href="http://www.skyhill.co.kr/" target='_blank' class="familySiteItem">롯데스키이힐C.C</a></li>
+                                <li><a href="https://www.lotteresortsokcho.com" target='_blank' class="familySiteItem">롯데리조트 속초</a></li>
+                                <li><a href="http://www.lottebuyeoresort.com" target='_blank' class="familySiteItem">롯데리조트 부여</a></li>
+                                <li><a href="http://www.lottejejuresort.com" target='_blank' class="familySiteItem">롯데리조트 제주</a></li>
+                                <li><a href="http://www.daehong.com/" target='_blank' class="familySiteItem">대홍기획</a></li>
+                                <li><a href="http://www.cashbee.co.kr" target='_blank' class="familySiteItem">케시비</a></li>
+                                <li><a href="http://www.mybi.co.kr" target='_blank' class="familySiteItem">마이비</a></li>
+                                <li><a href="http://www.lotternd.com" target='_blank' class="familySiteItem">롯데중앙연구소</a></li>
+                                <li><a href="http://www.llc.co.kr/" target='_blank' class="familySiteItem">롯데로지스틱스</a></li>
+                                <li><a href="http://www.lottefoundation.or.kr/" target='_blank' class="familySiteItem">롯데재단</a></li>
+                                <li><a href="http://www.lotterentacar.net" target='_blank' class="familySiteItem">롯데렌터카</a></li>
+                                <li><a href="http://www.lotteconcerthall.com/" target='_blank' class="familySiteItem">롯데콘서트홀</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="footer_bottom">
+                <!-- 약관 및 정책 -->
+                <div class="footer_menu">
+                    <h3 class="hide">약관 및 정책</h3>
+                    <ul>
+                        <li><a href="#none">사이트맵</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="#none">윤리핫라인</a></li>
+                        <li><a href="#none">불공정거래신고</a></li>
+                        <li><a href="#none">안전보건핫라인</a></li>
+                    </ul>
+                </div>
+
+                <!-- SNS -->
+                <div class="snsWrap">
+                    <div class="youtubeIcon">
+                        <a href="https://www.youtube.com/user/7elevenkorea" target="_blank">
+                            <img src="../images/youtube_logo.png" alt="유튜브"/></a>
+                    </div>
+                    <div class="instaIcon">
+                        <a href="https://www.instagram.com/7elevenkorea" target="_blank">
+                            <img src="../images/Instagram_logo.png" alt="인스타그램"
+                        /></a>
+                    </div>
+                    <div class="blogIcon">
+                        <a href="https://blog.naver.com/711sns"target="_blank">
+                            <img src="../images/blog_logo.png" alt="네이버블로그"/></a>
+                    </div>
+                    <div class="facebookIcon">
+                        <a href="https://www.facebook.com/7elevenkorea" target="_blank">
+                            <img src="../images/facebook_logo.png" alt="페이스북"/></a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 연락처 & copyright -->
+            <div class="footer_text">
+                <address>서울특별시 중구 청계천로 100 시그니처타워 4층</address>
+                <p>TEL 1577-0711 &#47; FAX 02-2679-6960</p>
+                <p>롯데택배 세븐일레븐 전용 고객센터 &colon; 1688-1211</p>
+                <p>COPYRIGHT 2014 KOREA SEVEN CO, LTD. All Rights Reserved.</p>
+            </div>
+
+            <!-- 인증 -->
+            <div class="ismsp_wrap">
+                <div class="ismsp_logo">
+                    <img src="../images/ismsp_logo.png" alt="정보보호 관리체계 인증 ISMS">
+                </div>
+                <div class="ismsp_text">
+                    <p>[인증범위] 코리아세븐 세븐일레븐 홈페이지 및 모바일 앱 서비스</p>
+                    <p>[유효기간] 2024-02-27 ~ 2027-02-06</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+>>>>>>> 0d2153c96c52ab25c52872b296cadc90d92f2092
 </html>
